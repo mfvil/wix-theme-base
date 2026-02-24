@@ -1,0 +1,13 @@
+{
+  "name": "@mfvil/wix-theme-base",
+  "version": "0.1.0",
+  "description": "Wix Studio CSS design system base for agency projects",
+  "main": "styles/index.css",
+  "files": ["styles/"],
+  "keywords": ["wix", "wix-studio", "css", "design-system", "theme", "agency"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mfvil/wix-theme-base.git"
+  }
+}

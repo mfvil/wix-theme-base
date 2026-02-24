@@ -1,0 +1,10 @@
+/* ==========================================================================
+   index.css — Entry Point
+   wix-theme-base | @mfvil/wix-theme-base
+   Import this file into your Wix Studio Custom CSS panel.
+   ========================================================================== */
+
+@import "./tokens.css";
+@import "./components.css";
+@import "./animations.css";
+@import "./utilities.css";

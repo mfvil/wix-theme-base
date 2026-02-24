@@ -1,0 +1,141 @@
+/* ==========================================================================
+   animations.css — Animation Utilities for Wix Studio
+   wix-theme-base | @mfvil/wix-theme-base
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Keyframes
+-------------------------------------------------------------------------- */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(-16px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scaleOut {
+  from { opacity: 1; transform: scale(1); }
+  to   { opacity: 0; transform: scale(0.9); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  from { background-position: -200% center; }
+  to   { background-position: 200% center; }
+}
+
+@keyframes bounceIn {
+  0%   { opacity: 0; transform: scale(0.3); }
+  50%  { opacity: 1; transform: scale(1.05); }
+  70%  { transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------------------------
+   Animation utility classes
+-------------------------------------------------------------------------- */
+
+.animate-fade-in    { animation: fadeIn    var(--duration, 300ms) ease both; }
+.animate-fade-out   { animation: fadeOut   var(--duration, 300ms) ease both; }
+.animate-slide-up   { animation: slideUp   var(--duration, 300ms) ease both; }
+.animate-slide-down { animation: slideDown var(--duration, 300ms) ease both; }
+.animate-slide-left { animation: slideLeft var(--duration, 300ms) ease both; }
+.animate-slide-right{ animation: slideRight var(--duration, 300ms) ease both; }
+.animate-scale-in   { animation: scaleIn   var(--duration, 300ms) ease both; }
+.animate-scale-out  { animation: scaleOut  var(--duration, 300ms) ease both; }
+.animate-pulse      { animation: pulse     var(--duration, 2s) ease-in-out infinite; }
+.animate-bounce-in  { animation: bounceIn  var(--duration, 500ms) ease both; }
+.animate-spin       { animation: spin      var(--duration, 1s) linear infinite; }
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-neutral-100) 25%,
+    var(--color-neutral-200) 50%,
+    var(--color-neutral-100) 75%
+  );
+  background-size: 200% auto;
+  animation: shimmer var(--duration, 1.5s) linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   Duration modifiers
+-------------------------------------------------------------------------- */
+
+.duration-fast   { --duration: 150ms; }
+.duration-base   { --duration: 300ms; }
+.duration-slow   { --duration: 600ms; }
+.duration-slower { --duration: 1000ms; }
+
+/* --------------------------------------------------------------------------
+   Delay modifiers
+-------------------------------------------------------------------------- */
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* --------------------------------------------------------------------------
+   Easing helpers (use via custom property override)
+-------------------------------------------------------------------------- */
+
+.ease-in      { animation-timing-function: ease-in; }
+.ease-out     { animation-timing-function: ease-out; }
+.ease-in-out  { animation-timing-function: ease-in-out; }
+.ease-bounce  { animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+.ease-linear  { animation-timing-function: linear; }
+
+/* --------------------------------------------------------------------------
+   Reduced motion — respect user preference
+-------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
