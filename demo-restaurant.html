@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="bistro">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,132 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
 
-  <!-- Base theme -->
+  <!-- Base styles -->
   <link rel="stylesheet" href="styles/tokens.css">
-  <link id="theme-stylesheet" rel="stylesheet" href="themes/restaurant-bistro.css">
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/animations.css">
   <link rel="stylesheet" href="styles/utilities.css">
+
+  <!-- Inlined theme tokens — toggled via data-theme on <html> -->
+  <style>
+    /* ---- Bistro Warm ---- */
+    :root[data-theme="bistro"] {
+      --font-sans:    "DM Sans", system-ui, sans-serif;
+      --font-serif:   "Cormorant Garamond", Georgia, serif;
+      --font-display: "Playfair Display", Georgia, serif;
+      --color-primary:       #8B1A1A;
+      --color-primary-dark:  #6B1212;
+      --color-primary-light: #B02626;
+      --color-secondary:     #2E5219;
+      --color-accent:        #C4922A;
+      --color-accent-text:   #7A5217;
+      --color-bg:            #FAF7F2;
+      --color-surface:       #F2EBE0;
+      --color-text:          #1A1209;
+      --color-text-muted:    #6B5347;
+      --color-border:        #E0D5C5;
+      --color-success:       #2A6B2A;
+      --color-warning:       #C4922A;
+      --color-error:         #C0392B;
+      --font-size-5xl:       3.5rem;
+      --font-size-4xl:       2.5rem;
+      --font-size-3xl:       2rem;
+      --letter-spacing-display: -0.02em;
+    }
+
+    /* ---- Fresh Modern ---- */
+    :root[data-theme="fresh"] {
+      --font-sans:    "DM Sans", system-ui, sans-serif;
+      --font-serif:   "Cormorant Garamond", Georgia, serif;
+      --font-display: "Playfair Display", Georgia, serif;
+      --color-primary:       #1F4A18;
+      --color-primary-dark:  #163512;
+      --color-primary-light: #2E6B22;
+      --color-secondary:     #A0432A;
+      --color-accent:        #D4A827;
+      --color-accent-text:   #7A5A10;
+      --color-bg:            #FAFAF6;
+      --color-surface:       #F2F5EE;
+      --color-text:          #1C1C12;
+      --color-text-muted:    #5A6048;
+      --color-border:        #D8DDD0;
+      --color-success:       #1F4A18;
+      --color-warning:       #D4A827;
+      --color-error:         #B83A22;
+      --font-size-5xl:       3.5rem;
+      --font-size-4xl:       2.5rem;
+      --font-size-3xl:       2rem;
+      --letter-spacing-display: -0.02em;
+    }
+
+    /* ---- Shared: apply display font to headings ---- */
+    :root[data-theme="bistro"] .heading-1,
+    :root[data-theme="bistro"] .heading-2,
+    :root[data-theme="bistro"] .heading-3,
+    :root[data-theme="bistro"] .heading-4,
+    :root[data-theme="bistro"] .heading-5,
+    :root[data-theme="bistro"] .heading-6,
+    :root[data-theme="fresh"] .heading-1,
+    :root[data-theme="fresh"] .heading-2,
+    :root[data-theme="fresh"] .heading-3,
+    :root[data-theme="fresh"] .heading-4,
+    :root[data-theme="fresh"] .heading-5,
+    :root[data-theme="fresh"] .heading-6 {
+      font-family: var(--font-display);
+      letter-spacing: var(--letter-spacing-display);
+    }
+
+    .quote, .menu-description {
+      font-family: var(--font-serif);
+      font-size: var(--font-size-xl);
+      font-style: italic;
+      line-height: var(--line-height-relaxed);
+      color: var(--color-text-muted);
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: var(--space-4);
+      padding: var(--space-4) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .menu-item:last-child { border-bottom: none; }
+    .menu-item-name {
+      font-family: var(--font-display);
+      font-size: var(--font-size-lg);
+      font-weight: 500;
+    }
+    .menu-item-desc {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      margin-top: var(--space-1);
+      line-height: var(--line-height-relaxed);
+    }
+    .menu-item-price {
+      font-family: var(--font-display);
+      font-size: var(--font-size-lg);
+      font-weight: 600;
+      color: var(--color-primary);
+      white-space: nowrap;
+    }
+
+    .divider-ornament {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      margin: var(--space-8) 0;
+      color: var(--color-accent-text);
+    }
+    .divider-ornament::before,
+    .divider-ornament::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
+    }
+  </style>
 
   <style>
     body {
@@ -506,8 +626,7 @@
 
   <script>
     function setTheme(name, btn) {
-      const link = document.getElementById('theme-stylesheet');
-      link.href = `themes/restaurant-${name}.css`;
+      document.documentElement.dataset.theme = name;
       document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
     }
