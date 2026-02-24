@@ -68,6 +68,48 @@
       --letter-spacing-display: -0.02em;
     }
 
+    /* ---- Cantina / Food Truck ---- */
+    :root[data-theme="cantina"] {
+      --font-sans:    "DM Sans", system-ui, sans-serif;
+      --font-serif:   "Cormorant Garamond", Georgia, serif;
+      --font-display: "Playfair Display", Georgia, serif;
+      --color-primary:       #C4241A;
+      --color-primary-dark:  #991710;
+      --color-primary-light: #E63028;
+      --color-secondary:     #0A7B73;
+      --color-accent:        #E8932A;
+      --color-accent-text:   #9E5F10;
+      --color-bg:            #FFF8F0;
+      --color-surface:       #F7EDE0;
+      --color-text:          #1C0F0A;
+      --color-text-muted:    #7A5040;
+      --color-border:        #EDD9C5;
+      --color-success:       #156B40;
+      --color-warning:       #E8932A;
+      --color-error:         #C4241A;
+      --font-size-5xl:       4rem;
+      --font-size-4xl:       2.75rem;
+      --font-size-3xl:       2.1rem;
+      --letter-spacing-display: -0.01em;
+    }
+
+    /* ---- Cantina: teal italic accent ---- */
+    :root[data-theme="cantina"] .heading-1 em,
+    :root[data-theme="cantina"] .heading-2 em,
+    :root[data-theme="cantina"] .heading-3 em {
+      color: var(--color-secondary);
+    }
+
+    /* Cantina spice + tag components */
+    .spice { display: inline-flex; gap: 2px; margin-left: var(--space-2); vertical-align: middle; }
+    .spice-pip { width: 8px; height: 8px; border-radius: 50%; background: var(--color-border); }
+    .spice-pip.hot { background: var(--color-primary); }
+    .menu-tag { display: inline-flex; align-items: center; padding: 1px 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border-radius: var(--radius-full); margin-left: var(--space-2); }
+    .menu-tag-veg { background: #D4F0DC; color: #156B40; }
+    .menu-tag-gf  { background: #FFF0D4; color: #9E5F10; }
+    .menu-tag-hot { background: #FFE0DC; color: #991710; }
+    .menu-tag-new { background: #D4F0EE; color: #0A7B73; }
+
     /* ---- Shared: apply display font to headings ---- */
     :root[data-theme="bistro"] .heading-1,
     :root[data-theme="bistro"] .heading-2,
@@ -80,7 +122,13 @@
     :root[data-theme="fresh"] .heading-3,
     :root[data-theme="fresh"] .heading-4,
     :root[data-theme="fresh"] .heading-5,
-    :root[data-theme="fresh"] .heading-6 {
+    :root[data-theme="fresh"] .heading-6,
+    :root[data-theme="cantina"] .heading-1,
+    :root[data-theme="cantina"] .heading-2,
+    :root[data-theme="cantina"] .heading-3,
+    :root[data-theme="cantina"] .heading-4,
+    :root[data-theme="cantina"] .heading-5,
+    :root[data-theme="cantina"] .heading-6 {
       font-family: var(--font-display);
       letter-spacing: var(--letter-spacing-display);
     }
@@ -385,16 +433,17 @@
   <!-- Theme switcher -->
   <div class="theme-bar">
     <span>theme:</span>
-    <button class="theme-btn active" onclick="setTheme('bistro', this)">🍷 Bistro Warm</button>
+    <button id="btn-bistro" class="theme-btn active" onclick="setTheme('bistro', this)">🍷 Bistro Warm</button>
     <button class="theme-btn" onclick="setTheme('fresh', this)">🌿 Fresh Modern</button>
+    <button class="theme-btn" onclick="setTheme('cantina', this)">🌶️ Cantina</button>
     <span style="margin-left:auto; opacity:0.5">wix-theme-base restaurant demo</span>
   </div>
 
   <!-- Hero -->
   <div class="hero animate-fade-in">
-    <p class="hero-eyebrow">Est. 2024 &nbsp;·&nbsp; Austin, Texas</p>
-    <h1 class="hero-title">Where Every Meal Becomes <em>a Memory</em></h1>
-    <p class="hero-sub">Fresh ingredients, honest cooking, and a table always waiting for you.</p>
+    <p class="hero-eyebrow" id="hero-eyebrow">Est. 2024 &nbsp;·&nbsp; Austin, Texas</p>
+    <h1 class="hero-title" id="hero-title">Where Every Meal Becomes <em>a Memory</em></h1>
+    <p class="hero-sub" id="hero-sub">Fresh ingredients, honest cooking, and a table always waiting for you.</p>
     <div class="flex gap-4">
       <button class="btn btn-primary btn-lg">Reserve a Table</button>
       <button class="btn btn-outline btn-lg">View Menu</button>
@@ -624,11 +673,120 @@
     </div>
   </section>
 
+  <!-- Cantina-specific menu section -->
+  <section id="cantina-section" style="display:none">
+    <div class="container">
+      <p class="section-label">Cantina Components</p>
+      <h2 class="section-title">El Menú <em>de Hoy</em></h2>
+      <p class="section-subtitle">Spice indicators and menu tags — cantina-specific components</p>
+
+      <div style="max-width: 540px;">
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">
+              Al Pastor Taco
+              <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip"></span></span>
+              <span class="menu-tag menu-tag-new">New</span>
+            </div>
+            <div class="menu-item-desc">Spit-roasted pork, pineapple, white onion, cilantro, corn tortilla</div>
+          </div>
+          <div class="menu-item-price">$5</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">
+              Barbacoa Quesabirria
+              <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip hot"></span></span>
+            </div>
+            <div class="menu-item-desc">Slow-braised beef, Oaxacan cheese, consommé for dipping</div>
+          </div>
+          <div class="menu-item-price">$14</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">
+              Calabacitas Bowl
+              <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip"></span><span class="spice-pip"></span></span>
+              <span class="menu-tag menu-tag-veg">Veg</span>
+              <span class="menu-tag menu-tag-gf">GF</span>
+            </div>
+            <div class="menu-item-desc">Zucchini, corn, roasted poblano, black beans, crema, cotija</div>
+          </div>
+          <div class="menu-item-price">$12</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">
+              Elote en Vaso
+              <span class="menu-tag menu-tag-veg">Veg</span>
+            </div>
+            <div class="menu-item-desc">Street corn, mayo, lime, chili powder, cotija cheese</div>
+          </div>
+          <div class="menu-item-price">$7</div>
+        </div>
+        <div class="menu-item">
+          <div>
+            <div class="menu-item-name">
+              Agua de Jamaica
+              <span class="menu-tag menu-tag-gf">GF</span>
+            </div>
+            <div class="menu-item-desc">Hibiscus flower, lime, cane sugar — house made daily</div>
+          </div>
+          <div class="menu-item-price">$4</div>
+        </div>
+      </div>
+
+      <div class="divider-ornament" style="margin: var(--space-10) 0">🌶️</div>
+
+      <div class="flex gap-3 flex-wrap">
+        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
+          <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip"></span><span class="spice-pip"></span></span> Mild
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
+          <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip"></span></span> Medium
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
+          <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip hot"></span></span> Hot
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
+          <span class="menu-tag menu-tag-veg" style="margin:0">Veg</span> Vegetarian
+        </div>
+        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
+          <span class="menu-tag menu-tag-gf" style="margin:0">GF</span> Gluten Free
+        </div>
+      </div>
+    </div>
+  </section>
+
   <script>
+    const heroContent = {
+      bistro: {
+        eyebrow: 'Est. 2024 &nbsp;·&nbsp; Austin, Texas',
+        title:   'Where Every Meal Becomes <em>a Memory</em>',
+        sub:     'Fresh ingredients, honest cooking, and a table always waiting for you.',
+      },
+      fresh: {
+        eyebrow: 'Farm to Table &nbsp;·&nbsp; Austin, Texas',
+        title:   'Grown Here, <em>Cooked Here</em>',
+        sub:     'Seasonal menus built around what\'s ready, sourced from farms within 100 miles.',
+      },
+      cantina: {
+        eyebrow: '🌮 &nbsp; Austin, Texas &nbsp; 🌮',
+        title:   'Tacos, Tortas & <em>Todo Lo Demás</em>',
+        sub:     'Authentic street food, made from scratch. Rolling Tuesday through Sunday.',
+      },
+    };
+
     function setTheme(name, btn) {
       document.documentElement.dataset.theme = name;
       document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      const h = heroContent[name];
+      document.getElementById('hero-eyebrow').innerHTML = h.eyebrow;
+      document.getElementById('hero-title').innerHTML   = h.title;
+      document.getElementById('hero-sub').textContent   = h.sub;
+      document.getElementById('cantina-section').style.display =
+        name === 'cantina' ? 'block' : 'none';
     }
   </script>
 
