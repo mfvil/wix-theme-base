@@ -1,0 +1,227 @@
+/* ==========================================================================
+   clients/el-mango-feliz/theme-override.css
+   Client: El Mango Feliz Taqueria
+   Site: https://elmango0499.wixsite.com/website
+   Base theme: themes/restaurant-cantina.css
+
+   Extends the cantina palette with mango-specific personality.
+   Google Fonts required:
+   https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;500;600;700;800&display=swap
+
+   Brand: El Mango Feliz Taqueria
+   Slogan: "Where Every Taco Tells a Story"
+   Vibe: Hand-painted food truck signage meets street taco energy
+   ========================================================================== */
+
+:root {
+
+  /* --------------------------------------------------------------------------
+     Font overrides — Lobster Two feels like hand-painted truck signage
+  -------------------------------------------------------------------------- */
+
+  --font-sans:    "Nunito", system-ui, -apple-system, sans-serif;
+  --font-display: "Lobster Two", Georgia, serif;
+
+  /* --------------------------------------------------------------------------
+     Color overrides — mango tertiary on top of cantina base
+  -------------------------------------------------------------------------- */
+
+  /* Keep cantina chili red + teal. Add mango as a third punch. */
+  --color-mango:        #F5A623;   /* Ripe mango — warm golden orange */
+  --color-mango-dark:   #C47D0E;   /* Dark mango — safe for text on light bg */
+  --color-mango-light:  #FDE8B5;   /* Light mango — badge/tag backgrounds */
+
+  /* Slightly warmer primary than base cantina */
+  --color-primary:       #C8261C;
+  --color-primary-dark:  #A01E14;
+  --color-primary-light: #E83B30;
+
+  /* Slightly deeper background — feels more like weathered wood than linen */
+  --color-bg:      #FFF6EC;
+  --color-surface: #F5E8D5;
+  --color-border:  #EAD3B3;
+}
+
+/* --------------------------------------------------------------------------
+   Hero section
+-------------------------------------------------------------------------- */
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: var(--font-size-3xl);
+  font-style: italic;
+  color: var(--color-mango-dark);
+  line-height: var(--line-height-snug);
+  letter-spacing: 0.01em;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: var(--font-size-5xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: var(--line-height-tight);
+}
+
+.hero-subtext {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  color: var(--color-text-muted);
+  max-width: 560px;
+}
+
+/* --------------------------------------------------------------------------
+   CTA button
+-------------------------------------------------------------------------- */
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--color-primary);
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+  text-decoration: none;
+}
+
+.cta-button:hover {
+  background-color: var(--color-primary-dark);
+  transform: translateY(-1px);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.cta-button--secondary {
+  background-color: var(--color-secondary);
+}
+
+.cta-button--secondary:hover {
+  background-color: #086058;
+}
+
+.cta-button--mango {
+  background-color: var(--color-mango);
+  color: var(--color-text);
+}
+
+.cta-button--mango:hover {
+  background-color: var(--color-mango-dark);
+  color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   Location cards
+-------------------------------------------------------------------------- */
+
+.location-card {
+  background-color: #ffffff;
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-secondary);
+  padding: var(--space-6) var(--space-8);
+  box-shadow: var(--shadow-md);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.location-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.location-name {
+  font-family: var(--font-display);
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+}
+
+.location-hours {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-3);
+}
+
+.location-hours::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-secondary);
+  display: inline-block;
+}
+
+.location-desc {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+/* --------------------------------------------------------------------------
+   Mango badge — for specials, featured items, "new" tags
+-------------------------------------------------------------------------- */
+
+.badge-mango {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background-color: var(--color-mango-light);
+  color: var(--color-mango-dark);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   Section divider with food truck energy
+-------------------------------------------------------------------------- */
+
+.section-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-xs);
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-mango-dark);
+  margin-bottom: var(--space-3);
+}
+
+/* --------------------------------------------------------------------------
+   About / story section
+-------------------------------------------------------------------------- */
+
+.story-text {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  font-weight: 400;
+  color: var(--color-text);
+  line-height: var(--line-height-relaxed);
+  max-width: 680px;
+}
+
+.story-highlight {
+  color: var(--color-primary);
+  font-weight: 700;
+}
