@@ -1,0 +1,166 @@
+/* ==========================================================================
+   themes/noir.css — Dark Luxury Restaurant Theme
+   wix-theme-base | @mfvil/wix-theme-base
+
+   Palette: Obsidian, ember amber, antique gold, aged parchment
+   Vibe: Steakhouse, wine bar, speakeasy, upscale late-night
+   Mode: DARK
+
+   WCAG AA compliance:
+     --color-text (#F5EFE6) on --color-bg (#131110)         → 17.2:1  ✓ AAA
+     --color-text-muted (#9E9088) on --color-bg (#131110)   →  4.8:1  ✓ AA
+     --color-accent (#E8A23A) on --color-bg (#131110)       →  8.4:1  ✓ AAA
+     #131110 on --color-accent (#E8A23A) — btn-primary      →  8.4:1  ✓ AAA
+
+   Google Fonts:
+   https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap
+   ========================================================================== */
+
+:root {
+
+  /* Brand */
+  --color-primary:       #E8A23A;
+  --color-primary-dark:  #C4821A;
+  --color-primary-light: #F0B85A;
+  --color-secondary:     #C4821A;
+  --color-accent:        #E8A23A;
+  --color-accent-text:   #E8A23A;
+
+  /* Backgrounds */
+  --color-bg:      #131110;
+  --color-surface: #1C1A18;
+
+  /* Text */
+  --color-text:       #F5EFE6;
+  --color-text-muted: #9E9088;
+
+  /* Borders */
+  --color-border: #2E2A26;
+
+  /* Status */
+  --color-success: #2A6B3A;
+  --color-warning: #C4821A;
+  --color-error:   #C0392B;
+  --color-info:    #3A7BC8;
+
+  /* Restaurant tokens */
+  --price-color:   #E8A23A;
+  --ornament-color: #E8A23A;
+  --hero-overlay:  linear-gradient(to bottom, rgb(0 0 0 / 0.1) 0%, rgb(0 0 0 / 0.78) 100%);
+}
+
+/* --- Headings --- */
+.heading-1, .heading-2, .heading-3,
+.heading-4, .heading-5, .heading-6 {
+  font-family: var(--font-display);
+  letter-spacing: var(--letter-spacing-display);
+  color: var(--color-text);
+}
+
+.heading-1 { font-weight: 900; }
+.heading-2 { font-weight: 800; }
+.heading-3 { font-weight: 700; }
+
+.heading-1 em, .heading-2 em, .heading-3 em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* --- Cards on dark bg --- */
+.card, .card-elevated, .card-bordered {
+  background-color: var(--color-surface);
+}
+
+.card-elevated {
+  box-shadow: 0 8px 40px -8px rgb(0 0 0 / 0.6), 0 2px 8px -2px rgb(0 0 0 / 0.4);
+}
+
+.card-bordered {
+  border-color: var(--color-border);
+}
+
+.card-header, .card-footer {
+  border-color: var(--color-border);
+}
+
+.card-footer {
+  background-color: #131110;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #131110;
+  font-weight: var(--font-weight-bold);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary-light);
+  border-color: var(--color-primary-light);
+}
+
+.btn-outline {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent);
+  color: #131110;
+}
+
+.btn-ghost {
+  color: var(--color-text);
+}
+
+.btn-ghost:hover {
+  background-color: var(--color-surface);
+}
+
+/* --- Reservation: amber on obsidian --- */
+.reservation-strip {
+  background-color: var(--color-accent);
+  color: #131110;
+}
+
+.reservation-strip-title { color: #131110; }
+
+.reservation-strip-sub { color: rgb(19 17 16 / 0.65); }
+
+.btn-reservation {
+  color: var(--color-accent);
+  background-color: #131110;
+}
+
+.btn-reservation:hover {
+  background-color: #1C1A18;
+  color: var(--color-accent);
+}
+
+/* --- Chef special: amber left border --- */
+.chef-special {
+  background-color: #1C1A18;
+  border-left-color: var(--color-accent);
+}
+
+/* --- Inputs on dark bg --- */
+.input, .textarea {
+  background-color: var(--color-surface);
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.input:focus, .textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgb(232 162 58 / 0.2);
+}
+
+/* --- Nav --- */
+.nav-link { color: var(--color-text-muted); }
+.nav-link:hover { color: var(--color-text); background-color: var(--color-surface); }
+
+/* --- Divider lines on dark bg --- */
+.divider { border-color: var(--color-border); }
+.menu-item { border-color: var(--color-border); }
+.menu-section-line { background: linear-gradient(to right, var(--color-border) 0%, transparent 100%); }

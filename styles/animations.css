@@ -139,3 +139,66 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Restaurant-specific animations
+-------------------------------------------------------------------------- */
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes plateIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes emberGlow {
+  0%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 20px var(--color-accent, #C4821A);
+  }
+  50% {
+    opacity: 0.85;
+    text-shadow: 0 0 40px var(--color-accent, #C4821A), 0 0 80px var(--color-accent, #C4821A);
+  }
+}
+
+@keyframes lineReveal {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
+}
+
+@keyframes heroKenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.05); }
+}
+
+.animate-reveal-up   { animation: revealUp     var(--duration, 700ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-plate-in    { animation: plateIn      var(--duration, 500ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-ember-glow  { animation: emberGlow    var(--duration, 3s) ease-in-out infinite; }
+.animate-line-reveal { animation: lineReveal   var(--duration, 600ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
+.animate-ken-burns   { animation: heroKenBurns var(--duration, 12s) ease-in-out infinite alternate; }
+
+/* Stagger helpers for menu items / card grids */
+.stagger-1 { animation-delay:  80ms; }
+.stagger-2 { animation-delay: 160ms; }
+.stagger-3 { animation-delay: 240ms; }
+.stagger-4 { animation-delay: 320ms; }
+.stagger-5 { animation-delay: 400ms; }
+.stagger-6 { animation-delay: 480ms; }
