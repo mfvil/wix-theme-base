@@ -67,79 +67,79 @@
 }
 
 /* --- Cards on dark bg --- */
-.card, .card-elevated, .card-bordered {
+.card, .es-card-elevated, .es-card-bordered {
   background-color: var(--color-surface);
 }
 
-.card-elevated {
+.es-card-elevated {
   box-shadow: 0 8px 40px -8px rgb(0 0 0 / 0.6), 0 2px 8px -2px rgb(0 0 0 / 0.4);
 }
 
-.card-bordered {
+.es-card-bordered {
   border-color: var(--color-border);
 }
 
-.card-header, .card-footer {
+.es-card-header, .es-card-footer {
   border-color: var(--color-border);
 }
 
-.card-footer {
+.es-card-footer {
   background-color: #131110;
 }
 
 /* --- Buttons --- */
-.btn-primary {
+.es-btn-primary {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   color: #131110;
   font-weight: var(--font-weight-bold);
 }
 
-.btn-primary:hover {
+.es-btn-primary:hover {
   background-color: var(--color-primary-light);
   border-color: var(--color-primary-light);
 }
 
-.btn-outline {
+.es-btn-outline {
   color: var(--color-accent);
   border-color: var(--color-accent);
 }
 
-.btn-outline:hover {
+.es-btn-outline:hover {
   background-color: var(--color-accent);
   color: #131110;
 }
 
-.btn-ghost {
+.es-btn-ghost {
   color: var(--color-text);
 }
 
-.btn-ghost:hover {
+.es-btn-ghost:hover {
   background-color: var(--color-surface);
 }
 
 /* --- Reservation: amber on obsidian --- */
-.reservation-strip {
+.es-reservation-strip {
   background-color: var(--color-accent);
   color: #131110;
 }
 
-.reservation-strip-title { color: #131110; }
+.es-reservation-strip-title { color: #131110; }
 
-.reservation-strip-sub { color: rgb(19 17 16 / 0.65); }
+.es-reservation-strip-sub { color: rgb(19 17 16 / 0.65); }
 
-.btn-reservation {
+.es-btn-reservation {
   color: var(--color-accent);
   background-color: #131110;
 }
 
-.btn-reservation:hover {
+.es-btn-reservation:hover {
   background-color: #1C1A18;
   color: var(--color-accent);
 }
 
 /* --- Chef special: amber left border --- */
-.chef-special {
+.es-chef-special {
   background-color: #1C1A18;
   border-left-color: var(--color-accent);
 }

@@ -1,6 +1,9 @@
 /* ==========================================================================
    components.css — Ember & Stone Component Library
    wix-theme-base | @mfvil/wix-theme-base
+
+   All classes are namespaced under .es- to avoid collisions with
+   Wix Studio's internal class names and any other loaded CSS.
    ========================================================================== */
 
 @import "./tokens.css";
@@ -15,7 +18,7 @@
    Buttons
 -------------------------------------------------------------------------- */
 
-.btn {
+.es-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -40,66 +43,66 @@
   user-select: none;
 }
 
-.btn:focus-visible {
+.es-btn:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
 }
 
-.btn:disabled,
-.btn[disabled] {
+.es-btn:disabled,
+.es-btn[disabled] {
   opacity: 0.45;
   cursor: not-allowed;
   pointer-events: none;
 }
 
-.btn-primary {
+.es-btn-primary {
   background-color: var(--color-primary);
   color: #ffffff;
   border-color: var(--color-primary);
 }
-.btn-primary:hover  { background-color: var(--color-primary-dark); border-color: var(--color-primary-dark); transform: translateY(-1px); }
-.btn-primary:active { transform: translateY(0); opacity: 0.9; }
+.es-btn-primary:hover  { background-color: var(--color-primary-dark); border-color: var(--color-primary-dark); transform: translateY(-1px); }
+.es-btn-primary:active { transform: translateY(0); opacity: 0.9; }
 
-.btn-secondary {
+.es-btn-secondary {
   background-color: var(--color-secondary);
   color: #ffffff;
   border-color: var(--color-secondary);
 }
-.btn-secondary:hover { opacity: 0.85; transform: translateY(-1px); }
+.es-btn-secondary:hover { opacity: 0.85; transform: translateY(-1px); }
 
-.btn-outline {
+.es-btn-outline {
   background-color: transparent;
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
-.btn-outline:hover { background-color: var(--color-primary); color: #ffffff; transform: translateY(-1px); }
+.es-btn-outline:hover { background-color: var(--color-primary); color: #ffffff; transform: translateY(-1px); }
 
-.btn-ghost {
+.es-btn-ghost {
   background-color: transparent;
   color: var(--color-text);
   border-color: transparent;
 }
-.btn-ghost:hover { background-color: var(--color-surface); }
+.es-btn-ghost:hover { background-color: var(--color-surface); }
 
-.btn-sm {
+.es-btn-sm {
   padding: var(--space-2) var(--space-4);
   font-size: var(--font-size-xs);
 }
 
-.btn-lg {
+.es-btn-lg {
   padding: var(--space-4) var(--space-10);
   font-size: var(--font-size-base);
   letter-spacing: var(--letter-spacing-wider);
 }
 
-.btn-icon {
+.es-btn-icon {
   padding: var(--space-2);
   width: 40px;
   height: 40px;
 }
 
-/* Reservation CTA — full-width strip button */
-.btn-reservation {
+/* Reservation CTA */
+.es-btn-reservation {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -118,33 +121,33 @@
   text-decoration: none;
   transition: background-color var(--transition-fast), transform var(--transition-fast);
 }
-.btn-reservation:hover { background-color: var(--color-stone-100); transform: translateY(-1px); }
+.es-btn-reservation:hover { background-color: var(--color-stone-100); transform: translateY(-1px); }
 
 /* --------------------------------------------------------------------------
    Cards
 -------------------------------------------------------------------------- */
 
-.card {
+.es-card {
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
-.card-elevated {
+.es-card-elevated {
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
   overflow: hidden;
 }
 
-.card-bordered {
+.es-card-bordered {
   background-color: var(--color-bg);
   border-radius: var(--radius-lg);
   border: var(--border-width-1) solid var(--color-border);
   overflow: hidden;
 }
 
-.card-header {
+.es-card-header {
   padding: var(--space-5) var(--space-6);
   border-bottom: var(--border-width-1) solid var(--color-border);
   font-family: var(--font-display);
@@ -153,9 +156,9 @@
   letter-spacing: var(--letter-spacing-snug);
 }
 
-.card-body  { padding: var(--space-6); }
+.es-card-body  { padding: var(--space-6); }
 
-.card-footer {
+.es-card-footer {
   padding: var(--space-5) var(--space-6);
   border-top: var(--border-width-1) solid var(--color-border);
   background-color: var(--color-surface);
@@ -165,7 +168,7 @@
    Navigation
 -------------------------------------------------------------------------- */
 
-.nav {
+.es-nav {
   display: flex;
   align-items: center;
   gap: var(--space-1);
@@ -174,9 +177,9 @@
   padding: 0;
 }
 
-.nav-item { display: flex; align-items: center; }
+.es-nav-item { display: flex; align-items: center; }
 
-.nav-link {
+.es-nav-link {
   display: inline-flex;
   align-items: center;
   padding: var(--space-2) var(--space-3);
@@ -189,45 +192,45 @@
   border-radius: var(--radius-md);
   transition: color var(--transition-fast), background-color var(--transition-fast);
 }
-.nav-link:hover     { color: var(--color-text); }
-.nav-link-active    { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
+.es-nav-link:hover     { color: var(--color-text); }
+.es-nav-link-active    { color: var(--color-primary); font-weight: var(--font-weight-semibold); }
 
 /* --------------------------------------------------------------------------
    Typography
 -------------------------------------------------------------------------- */
 
-.heading-1,
-.heading-2,
-.heading-3,
-.heading-4,
-.heading-5,
-.heading-6 {
+.es-heading-1,
+.es-heading-2,
+.es-heading-3,
+.es-heading-4,
+.es-heading-5,
+.es-heading-6 {
   font-family: var(--font-display);
   letter-spacing: var(--letter-spacing-display);
   line-height: var(--line-height-tight);
   color: var(--color-text);
 }
 
-.heading-1 { font-size: var(--font-size-5xl); font-weight: var(--font-weight-black); }
-.heading-2 { font-size: var(--font-size-4xl); font-weight: var(--font-weight-extrabold); }
-.heading-3 { font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); }
-.heading-4 { font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); }
-.heading-5 { font-size: var(--font-size-xl);  font-weight: var(--font-weight-semibold); }
-.heading-6 { font-size: var(--font-size-lg);  font-weight: var(--font-weight-semibold); }
+.es-heading-1 { font-size: var(--font-size-5xl); font-weight: var(--font-weight-black); }
+.es-heading-2 { font-size: var(--font-size-4xl); font-weight: var(--font-weight-extrabold); }
+.es-heading-3 { font-size: var(--font-size-3xl); font-weight: var(--font-weight-bold); }
+.es-heading-4 { font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); }
+.es-heading-5 { font-size: var(--font-size-xl);  font-weight: var(--font-weight-semibold); }
+.es-heading-6 { font-size: var(--font-size-lg);  font-weight: var(--font-weight-semibold); }
 
-.lead {
+.es-lead {
   font-family: var(--font-sans);
   font-size: var(--font-size-xl);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-muted);
 }
 
-.body-lg   { font-family: var(--font-sans); font-size: var(--font-size-lg);  line-height: var(--line-height-relaxed); }
-.body-base { font-family: var(--font-sans); font-size: var(--font-size-base); line-height: var(--line-height-normal); }
-.body-sm   { font-family: var(--font-sans); font-size: var(--font-size-sm);  line-height: var(--line-height-normal); }
-.caption   { font-family: var(--font-sans); font-size: var(--font-size-xs);  line-height: var(--line-height-normal); color: var(--color-text-muted); }
+.es-body-lg   { font-family: var(--font-sans); font-size: var(--font-size-lg);   line-height: var(--line-height-relaxed); }
+.es-body-base { font-family: var(--font-sans); font-size: var(--font-size-base);  line-height: var(--line-height-normal); }
+.es-body-sm   { font-family: var(--font-sans); font-size: var(--font-size-sm);   line-height: var(--line-height-normal); }
+.es-caption   { font-family: var(--font-sans); font-size: var(--font-size-xs);   line-height: var(--line-height-normal); color: var(--color-text-muted); }
 
-.overline {
+.es-overline {
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
@@ -236,10 +239,10 @@
   color: var(--color-accent-text);
 }
 
-/* Italic accent in headings — colored by theme */
-.heading-1 em,
-.heading-2 em,
-.heading-3 em {
+/* Italic accent — colored by theme */
+.es-heading-1 em,
+.es-heading-2 em,
+.es-heading-3 em {
   font-style: italic;
   color: var(--color-accent);
 }
@@ -248,7 +251,7 @@
    Badges
 -------------------------------------------------------------------------- */
 
-.badge {
+.es-badge {
   display: inline-flex;
   align-items: center;
   padding: 2px var(--space-3);
@@ -261,17 +264,17 @@
   white-space: nowrap;
 }
 
-.badge-primary   { background-color: var(--color-surface); color: var(--color-primary); }
-.badge-success   { background-color: #D6F0DC; color: #1A6B3A; }
-.badge-warning   { background-color: #FFF0D4; color: #8A5A10; }
-.badge-error     { background-color: #FFE0D8; color: #B83A22; }
-.badge-outline   { background-color: transparent; border: var(--border-width-1) solid var(--color-border); color: var(--color-text-muted); }
+.es-badge-primary { background-color: var(--color-surface); color: var(--color-primary); }
+.es-badge-success { background-color: #D6F0DC; color: #1A6B3A; }
+.es-badge-warning { background-color: #FFF0D4; color: #8A5A10; }
+.es-badge-error   { background-color: #FFE0D8; color: #B83A22; }
+.es-badge-outline { background-color: transparent; border: var(--border-width-1) solid var(--color-border); color: var(--color-text-muted); }
 
 /* --------------------------------------------------------------------------
    Dietary Tags
 -------------------------------------------------------------------------- */
 
-.dietary-tag {
+.es-dietary-tag {
   display: inline-flex;
   align-items: center;
   gap: 3px;
@@ -285,25 +288,25 @@
   line-height: 1.6;
 }
 
-.dietary-tag-vegan   { background: #D6F0DC; color: #1A6B3A; }
-.dietary-tag-veg     { background: #E0F0D6; color: #2A6B1A; }
-.dietary-tag-gf      { background: #FFF0D4; color: #8A5A10; }
-.dietary-tag-hot     { background: #FFE0D8; color: #B83A22; }
-.dietary-tag-new     { background: #D4E8F8; color: #1A5CA8; }
-.dietary-tag-popular { background: #F8EDD4; color: #8A5A10; }
-.dietary-tag-nut     { background: #F0E8FF; color: #6B2A9E; }
+.es-dietary-tag-vegan   { background: #D6F0DC; color: #1A6B3A; }
+.es-dietary-tag-veg     { background: #E0F0D6; color: #2A6B1A; }
+.es-dietary-tag-gf      { background: #FFF0D4; color: #8A5A10; }
+.es-dietary-tag-hot     { background: #FFE0D8; color: #B83A22; }
+.es-dietary-tag-new     { background: #D4E8F8; color: #1A5CA8; }
+.es-dietary-tag-popular { background: #F8EDD4; color: #8A5A10; }
+.es-dietary-tag-nut     { background: #F0E8FF; color: #6B2A9E; }
 
 /* --------------------------------------------------------------------------
    Dividers
 -------------------------------------------------------------------------- */
 
-.divider {
+.es-divider {
   border: none;
   border-top: var(--border-width-1) solid var(--color-border);
   margin: var(--space-6) 0;
 }
 
-.divider-vertical {
+.es-divider-vertical {
   display: inline-block;
   width: var(--border-width-1);
   height: 1em;
@@ -312,7 +315,7 @@
   vertical-align: middle;
 }
 
-.divider-ornament {
+.es-divider-ornament {
   display: flex;
   align-items: center;
   gap: var(--space-5);
@@ -322,8 +325,8 @@
   user-select: none;
 }
 
-.divider-ornament::before,
-.divider-ornament::after {
+.es-divider-ornament::before,
+.es-divider-ornament::after {
   content: "";
   flex: 1;
   height: 1px;
@@ -334,7 +337,7 @@
    Containers
 -------------------------------------------------------------------------- */
 
-.container {
+.es-container {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
@@ -343,7 +346,7 @@
   padding-right: var(--space-6);
 }
 
-.container-sm {
+.es-container-sm {
   width: 100%;
   max-width: 768px;
   margin-left: auto;
@@ -352,7 +355,7 @@
   padding-right: var(--space-6);
 }
 
-.container-lg {
+.es-container-lg {
   width: 100%;
   max-width: 1440px;
   margin-left: auto;
@@ -365,35 +368,35 @@
    Grids
 -------------------------------------------------------------------------- */
 
-.grid-2, .grid-3, .grid-4 {
+.es-grid-2, .es-grid-3, .es-grid-4 {
   display: grid;
   gap: var(--space-6);
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
-.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.es-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.es-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.es-grid-4 { grid-template-columns: repeat(4, 1fr); }
 
 @media (max-width: 768px) {
-  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .es-grid-2, .es-grid-3, .es-grid-4 { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .grid-3 { grid-template-columns: repeat(2, 1fr); }
-  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .es-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .es-grid-4 { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* --------------------------------------------------------------------------
    Forms
 -------------------------------------------------------------------------- */
 
-.form-group {
+.es-form-group {
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
 }
 
-.label {
+.es-label {
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
@@ -402,7 +405,7 @@
   color: var(--color-text-muted);
 }
 
-.input {
+.es-input {
   width: 100%;
   padding: var(--space-3) var(--space-4);
   font-family: var(--font-sans);
@@ -416,15 +419,15 @@
   appearance: none;
 }
 
-.input:focus {
+.es-input:focus {
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgb(196 130 26 / 0.15);
 }
 
-.input-error { border-color: var(--color-error); }
+.es-input-error { border-color: var(--color-error); }
 
-.textarea {
+.es-textarea {
   width: 100%;
   padding: var(--space-3) var(--space-4);
   font-family: var(--font-sans);
@@ -439,7 +442,7 @@
   transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-.textarea:focus {
+.es-textarea:focus {
   outline: none;
   border-color: var(--color-accent);
   box-shadow: 0 0 0 3px rgb(196 130 26 / 0.15);
@@ -449,7 +452,7 @@
    Restaurant Hero
 -------------------------------------------------------------------------- */
 
-.restaurant-hero {
+.es-restaurant-hero {
   position: relative;
   min-height: var(--hero-min-height);
   display: flex;
@@ -458,7 +461,7 @@
   background-color: var(--color-obsidian);
 }
 
-.restaurant-hero-bg {
+.es-restaurant-hero-bg {
   position: absolute;
   inset: 0;
   object-fit: cover;
@@ -468,11 +471,11 @@
   transition: transform 8s ease;
 }
 
-.restaurant-hero:hover .restaurant-hero-bg {
+.es-restaurant-hero:hover .es-restaurant-hero-bg {
   transform: scale(1.03);
 }
 
-.restaurant-hero-content {
+.es-restaurant-hero-content {
   position: relative;
   z-index: var(--z-raised);
   width: 100%;
@@ -480,7 +483,7 @@
   background: var(--hero-overlay);
 }
 
-.restaurant-hero-eyebrow {
+.es-restaurant-hero-eyebrow {
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
@@ -491,7 +494,7 @@
   display: block;
 }
 
-.restaurant-hero-title {
+.es-restaurant-hero-title {
   font-family: var(--font-display);
   font-size: var(--font-size-6xl);
   font-weight: var(--font-weight-black);
@@ -501,7 +504,7 @@
   margin-bottom: var(--space-6);
 }
 
-.restaurant-hero-subtitle {
+.es-restaurant-hero-subtitle {
   font-family: var(--font-sans);
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
@@ -510,7 +513,7 @@
   margin-bottom: var(--space-10);
 }
 
-.restaurant-hero-actions {
+.es-restaurant-hero-actions {
   display: flex;
   align-items: center;
   gap: var(--space-4);
@@ -521,18 +524,18 @@
    Menu Section
 -------------------------------------------------------------------------- */
 
-.menu-section {
+.es-menu-section {
   margin-bottom: var(--menu-section-gap);
 }
 
-.menu-section-header {
+.es-menu-section-header {
   display: flex;
   align-items: center;
   gap: var(--space-6);
   margin-bottom: var(--space-6);
 }
 
-.menu-section-title {
+.es-menu-section-title {
   font-family: var(--font-display);
   font-size: var(--font-size-3xl);
   font-weight: var(--font-weight-bold);
@@ -541,13 +544,13 @@
   letter-spacing: var(--letter-spacing-display);
 }
 
-.menu-section-line {
+.es-menu-section-line {
   flex: 1;
   height: 1px;
   background: linear-gradient(to right, var(--color-border) 0%, transparent 100%);
 }
 
-.menu-section-desc {
+.es-menu-section-desc {
   font-family: var(--font-display);
   font-size: var(--font-size-base);
   font-style: italic;
@@ -560,7 +563,7 @@
    Menu Item
 -------------------------------------------------------------------------- */
 
-.menu-item {
+.es-menu-item {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto auto auto;
@@ -569,9 +572,9 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-.menu-item:last-child { border-bottom: none; }
+.es-menu-item:last-child { border-bottom: none; }
 
-.menu-item-name {
+.es-menu-item-name {
   font-family: var(--font-display);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-semibold);
@@ -581,7 +584,7 @@
   grid-row: 1;
 }
 
-.menu-item-desc {
+.es-menu-item-desc {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
@@ -591,7 +594,7 @@
   padding-top: var(--space-1);
 }
 
-.menu-item-tags {
+.es-menu-item-tags {
   grid-column: 1;
   grid-row: 3;
   display: flex;
@@ -600,7 +603,7 @@
   flex-wrap: wrap;
 }
 
-.menu-item-price {
+.es-menu-item-price {
   font-family: var(--price-font);
   font-size: var(--font-size-base);
   font-weight: var(--font-weight-medium);
@@ -617,7 +620,7 @@
    Dish Card
 -------------------------------------------------------------------------- */
 
-.dish-card {
+.es-dish-card {
   display: flex;
   flex-direction: column;
   border-radius: var(--dish-card-radius);
@@ -627,12 +630,12 @@
   transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.dish-card:hover {
+.es-dish-card:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-lg);
 }
 
-.dish-card-image {
+.es-dish-card-image {
   aspect-ratio: var(--dish-card-img-ratio);
   object-fit: cover;
   width: 100%;
@@ -640,21 +643,21 @@
   background-color: var(--color-surface);
 }
 
-.dish-card-image-placeholder {
+.es-dish-card-image-placeholder {
   aspect-ratio: var(--dish-card-img-ratio);
   width: 100%;
   display: block;
   background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-stone-200) 100%);
 }
 
-.dish-card-body {
+.es-dish-card-body {
   padding: var(--space-5) var(--space-5) var(--space-6);
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.dish-card-name {
+.es-dish-card-name {
   font-family: var(--font-display);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
@@ -664,7 +667,7 @@
   line-height: var(--line-height-snug);
 }
 
-.dish-card-desc {
+.es-dish-card-desc {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
@@ -673,7 +676,7 @@
   margin-bottom: var(--space-5);
 }
 
-.dish-card-footer {
+.es-dish-card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -681,7 +684,7 @@
   margin-top: auto;
 }
 
-.dish-card-price {
+.es-dish-card-price {
   font-family: var(--price-font);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-medium);
@@ -693,7 +696,7 @@
    Chef's Special
 -------------------------------------------------------------------------- */
 
-.chef-special {
+.es-chef-special {
   position: relative;
   padding: var(--space-10) var(--space-10);
   background-color: var(--color-surface);
@@ -701,7 +704,7 @@
   overflow: hidden;
 }
 
-.chef-special::before {
+.es-chef-special::before {
   content: "★";
   position: absolute;
   top: var(--space-6);
@@ -714,7 +717,7 @@
   font-family: var(--font-sans);
 }
 
-.chef-special-label {
+.es-chef-special-label {
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
@@ -725,7 +728,7 @@
   display: block;
 }
 
-.chef-special-name {
+.es-chef-special-name {
   font-family: var(--font-display);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-black);
@@ -735,7 +738,7 @@
   margin-bottom: var(--space-3);
 }
 
-.chef-special-desc {
+.es-chef-special-desc {
   font-family: var(--font-display);
   font-size: var(--font-size-lg);
   font-style: italic;
@@ -745,7 +748,7 @@
   max-width: 560px;
 }
 
-.chef-special-price {
+.es-chef-special-price {
   font-family: var(--price-font);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-medium);
@@ -757,14 +760,14 @@
    Reservation Strip
 -------------------------------------------------------------------------- */
 
-.reservation-strip {
+.es-reservation-strip {
   background-color: var(--color-primary);
   color: #ffffff;
   padding: var(--space-16) var(--space-8);
   text-align: center;
 }
 
-.reservation-strip-title {
+.es-reservation-strip-title {
   font-family: var(--font-display);
   font-size: var(--font-size-4xl);
   font-weight: var(--font-weight-black);
@@ -773,7 +776,7 @@
   margin-bottom: var(--space-3);
 }
 
-.reservation-strip-sub {
+.es-reservation-strip-sub {
   font-family: var(--font-sans);
   font-size: var(--font-size-base);
   line-height: var(--line-height-relaxed);
@@ -785,21 +788,21 @@
    Hours Grid
 -------------------------------------------------------------------------- */
 
-.hours-grid {
+.es-hours-grid {
   display: grid;
   grid-template-columns: 1fr auto;
   gap: var(--space-3) var(--space-8);
   align-items: baseline;
 }
 
-.hours-day {
+.es-hours-day {
   font-family: var(--font-sans);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-medium);
   color: var(--color-text);
 }
 
-.hours-time {
+.es-hours-time {
   font-family: var(--price-font);
   font-size: var(--font-size-sm);
   color: var(--color-text-muted);
@@ -807,8 +810,8 @@
   letter-spacing: var(--letter-spacing-wide);
 }
 
-.hours-day.closed,
-.hours-time.closed {
+.es-hours-day.closed,
+.es-hours-time.closed {
   opacity: 0.4;
 }
 
@@ -816,12 +819,12 @@
    Review Quote
 -------------------------------------------------------------------------- */
 
-.review-quote {
+.es-review-quote {
   position: relative;
   padding: var(--space-8) var(--space-8) var(--space-8) var(--space-16);
 }
 
-.review-quote::before {
+.es-review-quote::before {
   content: "\201C";
   position: absolute;
   left: var(--space-4);
@@ -834,7 +837,7 @@
   opacity: 0.35;
 }
 
-.review-quote-text {
+.es-review-quote-text {
   font-family: var(--font-display);
   font-size: var(--font-size-xl);
   font-style: italic;
@@ -843,7 +846,7 @@
   margin-bottom: var(--space-5);
 }
 
-.review-stars {
+.es-review-stars {
   display: flex;
   gap: 2px;
   margin-bottom: var(--space-2);
@@ -851,7 +854,7 @@
   font-size: var(--font-size-sm);
 }
 
-.review-quote-author {
+.es-review-quote-author {
   font-family: var(--font-sans);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
@@ -864,7 +867,7 @@
    Price Level
 -------------------------------------------------------------------------- */
 
-.price-level {
+.es-price-level {
   display: inline-flex;
   gap: 1px;
   font-family: var(--price-font);
@@ -873,25 +876,25 @@
   letter-spacing: var(--letter-spacing-wide);
 }
 
-.price-level-pip      { color: var(--price-color); }
-.price-level-pip.dim  { color: var(--color-border); }
+.es-price-level-pip      { color: var(--price-color); }
+.es-price-level-pip.dim  { color: var(--color-border); }
 
 /* --------------------------------------------------------------------------
-   Spice Level (mercado-specific, available globally)
+   Spice Level
 -------------------------------------------------------------------------- */
 
-.spice {
+.es-spice {
   display: inline-flex;
   gap: 3px;
   vertical-align: middle;
   margin-left: var(--space-2);
 }
 
-.spice-pip {
+.es-spice-pip {
   width: 8px;
   height: 8px;
   border-radius: 50%;
   background: var(--color-border);
 }
 
-.spice-pip.hot { background: var(--color-primary); }
+.es-spice-pip.hot { background: var(--color-primary); }

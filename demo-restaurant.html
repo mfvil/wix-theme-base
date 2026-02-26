@@ -133,7 +133,7 @@
       background-color: #1C1A18;
     }
 
-    /* Botanica chef-special uses rose border */
+    /* Botanica es-chef-special uses rose border */
     [data-theme="botanica"] .chef-special {
       border-left-color: var(--color-secondary);
     }
@@ -268,13 +268,13 @@
 
     .two-col {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      es-grid-template-columns: 1fr 1fr;
       gap: var(--space-16);
       align-items: start;
     }
 
     @media (max-width: 768px) {
-      .two-col { grid-template-columns: 1fr; gap: var(--space-10); }
+      .two-col { es-grid-template-columns: 1fr; gap: var(--space-10); }
       .site-nav-links { display: none; }
       .restaurant-hero-title { font-size: var(--font-size-4xl); }
     }
@@ -289,7 +289,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
+      es-grid-template-columns: 2fr 1fr 1fr;
       gap: var(--space-12);
     }
 
@@ -392,7 +392,7 @@
   <!-- ===================================================================
        HERO
   =================================================================== -->
-  <section class="restaurant-hero">
+  <section class="es-restaurant-hero">
     <nav class="site-nav">
       <a href="#" class="site-nav-logo" id="nav-logo">Cinder &amp; Salt</a>
       <ul class="site-nav-links">
@@ -403,18 +403,18 @@
       </ul>
     </nav>
 
-    <div class="restaurant-hero-content">
-      <div class="container">
-        <span class="restaurant-hero-eyebrow" id="hero-eyebrow">Est. 2019 · Austin, Texas</span>
-        <h1 class="restaurant-hero-title animate-reveal-up" id="hero-title">
+    <div class="es-restaurant-hero-content">
+      <div class="es-container">
+        <span class="es-restaurant-hero-eyebrow" id="hero-eyebrow">Est. 2019 · Austin, Texas</span>
+        <h1 class="es-restaurant-hero-title es-animate-reveal-up" id="hero-title">
           Fire-kissed.<br><em>Honestly sourced.</em>
         </h1>
-        <p class="restaurant-hero-subtitle animate-reveal-up stagger-2" id="hero-sub">
+        <p class="es-restaurant-hero-subtitle es-animate-reveal-up es-stagger-2" id="hero-sub">
           A steakhouse built on wood smoke and obsession. Every cut aged in-house, every sauce made from scratch, every night worth remembering.
         </p>
-        <div class="restaurant-hero-actions animate-reveal-up stagger-3">
-          <a href="#" class="btn btn-lg btn-primary">Reserve a Table</a>
-          <a href="#" class="btn btn-lg btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.5)">View Menu</a>
+        <div class="es-restaurant-hero-actions es-animate-reveal-up es-stagger-3">
+          <a href="#" class="es-btn es-btn-lg es-btn-primary">Reserve a Table</a>
+          <a href="#" class="es-btn es-btn-lg es-btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.5)">View Menu</a>
         </div>
       </div>
     </div>
@@ -424,18 +424,18 @@
        CHEF'S SPECIAL
   =================================================================== -->
   <section class="section">
-    <div class="container">
-      <span class="overline" style="display:block;margin-bottom:var(--space-6)">Tonight's Feature</span>
-      <div class="chef-special">
-        <span class="chef-special-label">Chef's Selection</span>
-        <div class="chef-special-name" id="special-name">45-Day Dry-Aged Bone-In Ribeye</div>
-        <p class="chef-special-desc" id="special-desc">
+    <div class="es-container">
+      <span class="es-overline" style="display:block;margin-bottom:var(--space-6)">Tonight's Feature</span>
+      <div class="es-chef-special">
+        <span class="es-chef-special-label">Chef's Selection</span>
+        <div class="es-chef-special-name" id="special-name">45-Day Dry-Aged Bone-In Ribeye</div>
+        <p class="es-chef-special-desc" id="special-desc">
           Prime Black Angus, dry-aged in our in-house Himalayan salt cave. Finished over live oak coals with a bone marrow butter baste. Served with ember-roasted shallots and hand-cut frites.
         </p>
         <div style="display:flex;align-items:center;gap:var(--space-6);">
-          <span class="chef-special-price">$92</span>
-          <div class="dietary-tag dietary-tag-gf">GF</div>
-          <div class="dietary-tag dietary-tag-popular">Signature</div>
+          <span class="es-chef-special-price">$92</span>
+          <div class="es-dietary-tag es-dietary-tag-gf">GF</div>
+          <div class="es-dietary-tag es-dietary-tag-popular">Signature</div>
         </div>
       </div>
     </div>
@@ -445,7 +445,7 @@
        MENU
   =================================================================== -->
   <section class="section-inset">
-    <div class="container">
+    <div class="es-container">
       <span class="section-label">The Menu</span>
 
       <div class="two-col">
@@ -453,46 +453,46 @@
         <!-- Column 1 -->
         <div>
           <!-- Starters -->
-          <div class="menu-section">
-            <div class="menu-section-header">
-              <span class="menu-section-title">Starters</span>
-              <div class="menu-section-line"></div>
+          <div class="es-menu-section">
+            <div class="es-menu-section-header">
+              <span class="es-menu-section-title">Starters</span>
+              <div class="es-menu-section-line"></div>
             </div>
-            <p class="menu-section-desc">Small plates to open the palate.</p>
+            <p class="es-menu-section-desc">Small plates to open the palate.</p>
 
-            <div class="menu-item">
-              <span class="menu-item-name">Bone Marrow Toast</span>
-              <span class="menu-item-price">$18</span>
-              <span class="menu-item-desc">Roasted femur, grilled sourdough, chimichurri, fleur de sel.</span>
-              <div class="menu-item-tags">
-                <span class="dietary-tag dietary-tag-new">New</span>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Bone Marrow Toast</span>
+              <span class="es-menu-item-price">$18</span>
+              <span class="es-menu-item-desc">Roasted femur, grilled sourdough, chimichurri, fleur de sel.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-new">New</span>
               </div>
             </div>
 
-            <div class="menu-item">
-              <span class="menu-item-name">Beef Tartare</span>
-              <span class="menu-item-price">$22</span>
-              <span class="menu-item-desc">Hand-chopped prime tenderloin, capers, cornichons, Dijon, quail egg.</span>
-              <div class="menu-item-tags">
-                <span class="dietary-tag dietary-tag-gf">GF</span>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Beef Tartare</span>
+              <span class="es-menu-item-price">$22</span>
+              <span class="es-menu-item-desc">Hand-chopped prime tenderloin, capers, cornichons, Dijon, quail egg.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
               </div>
             </div>
 
-            <div class="menu-item">
-              <span class="menu-item-name">Charred Octopus</span>
-              <span class="menu-item-price">$26</span>
-              <span class="menu-item-desc">Spanish octopus, smoked paprika aioli, pickled fennel, crispy capers.</span>
-              <div class="menu-item-tags">
-                <span class="dietary-tag dietary-tag-gf">GF</span>
-                <span class="dietary-tag dietary-tag-popular">Popular</span>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Charred Octopus</span>
+              <span class="es-menu-item-price">$26</span>
+              <span class="es-menu-item-desc">Spanish octopus, smoked paprika aioli, pickled fennel, crispy capers.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+                <span class="es-dietary-tag es-dietary-tag-popular">Popular</span>
               </div>
             </div>
 
-            <div class="menu-item">
-              <span class="menu-item-name">Charcuterie Board</span>
-              <span class="menu-item-price">$38</span>
-              <span class="menu-item-desc">House-cured meats, aged cheeses, honeycomb, pickles, toasted bread.</span>
-              <div class="menu-item-tags"></div>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Charcuterie Board</span>
+              <span class="es-menu-item-price">$38</span>
+              <span class="es-menu-item-desc">House-cured meats, aged cheeses, honeycomb, pickles, toasted bread.</span>
+              <div class="es-menu-item-tags"></div>
             </div>
           </div>
         </div>
@@ -500,47 +500,47 @@
         <!-- Column 2 -->
         <div>
           <!-- Mains -->
-          <div class="menu-section">
-            <div class="menu-section-header">
-              <span class="menu-section-title">From the Fire</span>
-              <div class="menu-section-line"></div>
+          <div class="es-menu-section">
+            <div class="es-menu-section-header">
+              <span class="es-menu-section-title">From the Fire</span>
+              <div class="es-menu-section-line"></div>
             </div>
-            <p class="menu-section-desc">All cuts finished over live wood coals.</p>
+            <p class="es-menu-section-desc">All cuts finished over live wood coals.</p>
 
-            <div class="menu-item">
-              <span class="menu-item-name">Filet Mignon 8oz</span>
-              <span class="menu-item-price">$68</span>
-              <span class="menu-item-desc">Tenderloin, black truffle compound butter, potato gratin.</span>
-              <div class="menu-item-tags">
-                <span class="dietary-tag dietary-tag-gf">GF</span>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Filet Mignon 8oz</span>
+              <span class="es-menu-item-price">$68</span>
+              <span class="es-menu-item-desc">Tenderloin, black truffle compound butter, potato gratin.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
               </div>
             </div>
 
-            <div class="menu-item">
-              <span class="menu-item-name">NY Strip 14oz</span>
-              <span class="menu-item-price">$74</span>
-              <span class="menu-item-desc">21-day aged, roasted bone marrow, bordelaise, watercress.</span>
-              <div class="menu-item-tags">
-                <span class="dietary-tag dietary-tag-gf">GF</span>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">NY Strip 14oz</span>
+              <span class="es-menu-item-price">$74</span>
+              <span class="es-menu-item-desc">21-day aged, roasted bone marrow, bordelaise, watercress.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
               </div>
             </div>
 
-            <div class="menu-item">
-              <span class="menu-item-name">Smoked Duck Breast</span>
-              <span class="menu-item-price">$52</span>
-              <span class="menu-item-desc">Cherry wood smoked, sour cherry gastrique, farro, roasted beets.</span>
-              <div class="menu-item-tags">
-                <span class="dietary-tag dietary-tag-gf">GF</span>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Smoked Duck Breast</span>
+              <span class="es-menu-item-price">$52</span>
+              <span class="es-menu-item-desc">Cherry wood smoked, sour cherry gastrique, farro, roasted beets.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
               </div>
             </div>
 
-            <div class="menu-item">
-              <span class="menu-item-name">Whole Roasted Cauliflower</span>
-              <span class="menu-item-price">$38</span>
-              <span class="menu-item-desc">Harissa, preserved lemon yogurt, pomegranate, herb oil.</span>
-              <div class="menu-item-tags">
-                <span class="dietary-tag dietary-tag-vegan">Vegan</span>
-                <span class="dietary-tag dietary-tag-gf">GF</span>
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Whole Roasted Cauliflower</span>
+              <span class="es-menu-item-price">$38</span>
+              <span class="es-menu-item-desc">Harissa, preserved lemon yogurt, pomegranate, herb oil.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-vegan">Vegan</span>
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
               </div>
             </div>
           </div>
@@ -551,58 +551,58 @@
   </section>
 
   <!-- Ornamental divider -->
-  <div class="container">
-    <div class="divider-ornament">✦</div>
+  <div class="es-container">
+    <div class="es-divider-ornament">✦</div>
   </div>
 
   <!-- ===================================================================
        DISH CARDS
   =================================================================== -->
   <section class="section">
-    <div class="container">
+    <div class="es-container">
       <span class="section-label">Featured Dishes</span>
-      <h2 class="heading-2" style="margin-bottom:var(--space-10)">This <em>Season</em></h2>
+      <h2 class="es-heading-2" style="margin-bottom:var(--space-10)">This <em>Season</em></h2>
 
-      <div class="grid-3">
+      <div class="es-grid-3">
 
-        <div class="dish-card">
-          <div class="dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-surface) 0%, var(--color-stone-300) 100%);"></div>
-          <div class="dish-card-body">
-            <div class="dish-card-name">Wagyu A5 Tataki</div>
-            <p class="dish-card-desc">Thinly sliced Japanese Wagyu, truffle ponzu, pickled daikon, micro shiso. A study in restraint.</p>
-            <div class="dish-card-footer">
-              <span class="dish-card-price">$48</span>
+        <div class="es-dish-card">
+          <div class="es-dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-surface) 0%, var(--color-stone-300) 100%);"></div>
+          <div class="es-dish-card-body">
+            <div class="es-dish-card-name">Wagyu A5 Tataki</div>
+            <p class="es-dish-card-desc">Thinly sliced Japanese Wagyu, truffle ponzu, pickled daikon, micro shiso. A study in restraint.</p>
+            <div class="es-dish-card-footer">
+              <span class="es-dish-card-price">$48</span>
               <div style="display:flex;gap:var(--space-2);">
-                <span class="dietary-tag dietary-tag-gf">GF</span>
-                <span class="dietary-tag dietary-tag-new">New</span>
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+                <span class="es-dietary-tag es-dietary-tag-new">New</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="dish-card">
-          <div class="dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-stone-200) 0%, var(--color-stone-400) 100%);"></div>
-          <div class="dish-card-body">
-            <div class="dish-card-name">Lobster Bisque</div>
-            <p class="dish-card-desc">Maine lobster, cream, brandy, house-made croutons, chive oil. The dish that built our reputation.</p>
-            <div class="dish-card-footer">
-              <span class="dish-card-price">$24</span>
+        <div class="es-dish-card">
+          <div class="es-dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-stone-200) 0%, var(--color-stone-400) 100%);"></div>
+          <div class="es-dish-card-body">
+            <div class="es-dish-card-name">Lobster Bisque</div>
+            <p class="es-dish-card-desc">Maine lobster, cream, brandy, house-made croutons, chive oil. The dish that built our reputation.</p>
+            <div class="es-dish-card-footer">
+              <span class="es-dish-card-price">$24</span>
               <div style="display:flex;gap:var(--space-2);">
-                <span class="dietary-tag dietary-tag-popular">Signature</span>
+                <span class="es-dietary-tag es-dietary-tag-popular">Signature</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="dish-card">
-          <div class="dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-stone-700) 20%, var(--color-stone-500) 100%);"></div>
-          <div class="dish-card-body">
-            <div class="dish-card-name">Dark Chocolate Torte</div>
-            <p class="dish-card-desc">72% Valrhona, espresso ganache, smoked sea salt caramel, candied hazelnut. Deeply, unapologetically rich.</p>
-            <div class="dish-card-footer">
-              <span class="dish-card-price">$18</span>
+        <div class="es-dish-card">
+          <div class="es-dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-stone-700) 20%, var(--color-stone-500) 100%);"></div>
+          <div class="es-dish-card-body">
+            <div class="es-dish-card-name">Dark Chocolate Torte</div>
+            <p class="es-dish-card-desc">72% Valrhona, espresso ganache, smoked sea salt caramel, candied hazelnut. Deeply, unapologetically rich.</p>
+            <div class="es-dish-card-footer">
+              <span class="es-dish-card-price">$18</span>
               <div style="display:flex;gap:var(--space-2);">
-                <span class="dietary-tag dietary-tag-veg">V</span>
+                <span class="es-dietary-tag es-dietary-tag-veg">V</span>
               </div>
             </div>
           </div>
@@ -616,27 +616,27 @@
        REVIEWS
   =================================================================== -->
   <section class="section-inset">
-    <div class="container">
+    <div class="es-container">
       <span class="section-label">What People Say</span>
 
-      <div class="grid-3">
+      <div class="es-grid-3">
 
-        <div class="review-quote">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote-text">The bone-in ribeye was the single best piece of beef I've eaten in my life. No hyperbole. The aging program here is something else entirely.</p>
-          <span class="review-quote-author">— Marcus T., Austin Chronicle</span>
+        <div class="es-review-quote">
+          <div class="es-review-stars">★★★★★</div>
+          <p class="es-review-quote-text">The bone-in ribeye was the single best piece of beef I've eaten in my life. No hyperbole. The aging program here is something else entirely.</p>
+          <span class="es-review-quote-author">— Marcus T., Austin Chronicle</span>
         </div>
 
-        <div class="review-quote">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote-text">Walked in for a birthday dinner, left feeling like we'd experienced something rare. The service alone earns a second visit.</p>
-          <span class="review-quote-author">— Priya N., Google Review</span>
+        <div class="es-review-quote">
+          <div class="es-review-stars">★★★★★</div>
+          <p class="es-review-quote-text">Walked in for a birthday dinner, left feeling like we'd experienced something rare. The service alone earns a second visit.</p>
+          <span class="es-review-quote-author">— Priya N., Google Review</span>
         </div>
 
-        <div class="review-quote">
-          <div class="review-stars">★★★★★</div>
-          <p class="review-quote-text">Dark, intimate, impossibly good. The tartare and a glass of Barolo is my new religion. I've been back four times this month.</p>
-          <span class="review-quote-author">— James V., Yelp Elite</span>
+        <div class="es-review-quote">
+          <div class="es-review-stars">★★★★★</div>
+          <p class="es-review-quote-text">Dark, intimate, impossibly good. The tartare and a glass of Barolo is my new religion. I've been back four times this month.</p>
+          <span class="es-review-quote-author">— James V., Yelp Elite</span>
         </div>
 
       </div>
@@ -646,11 +646,11 @@
   <!-- ===================================================================
        RESERVATION STRIP
   =================================================================== -->
-  <section class="reservation-strip">
-    <div class="container">
-      <div class="reservation-strip-title" id="res-title">Make Your Reservation</div>
-      <p class="reservation-strip-sub">Dinner service nightly from 5 PM. Private dining available for parties of 10+.</p>
-      <a href="#" class="btn-reservation">Book a Table</a>
+  <section class="es-reservation-strip">
+    <div class="es-container">
+      <div class="es-reservation-strip-title" id="res-title">Make Your Reservation</div>
+      <p class="es-reservation-strip-sub">Dinner service nightly from 5 PM. Private dining available for parties of 10+.</p>
+      <a href="#" class="es-btn-reservation">Book a Table</a>
     </div>
   </section>
 
@@ -658,27 +658,27 @@
        HOURS + CONTACT
   =================================================================== -->
   <section class="section">
-    <div class="container">
+    <div class="es-container">
       <div class="two-col">
 
         <!-- Hours -->
         <div>
           <span class="section-label">Hours</span>
-          <div class="hours-grid">
-            <span class="hours-day closed">Monday</span>
-            <span class="hours-time closed">Closed</span>
-            <span class="hours-day closed">Tuesday</span>
-            <span class="hours-time closed">Closed</span>
-            <span class="hours-day">Wednesday</span>
-            <span class="hours-time">5:00 PM – 10:00 PM</span>
-            <span class="hours-day">Thursday</span>
-            <span class="hours-time">5:00 PM – 10:00 PM</span>
-            <span class="hours-day">Friday</span>
-            <span class="hours-time">5:00 PM – 11:00 PM</span>
-            <span class="hours-day">Saturday</span>
-            <span class="hours-time">5:00 PM – 11:00 PM</span>
-            <span class="hours-day">Sunday</span>
-            <span class="hours-time">5:00 PM – 9:00 PM</span>
+          <div class="es-hours-grid">
+            <span class="es-hours-day closed">Monday</span>
+            <span class="es-hours-time closed">Closed</span>
+            <span class="es-hours-day closed">Tuesday</span>
+            <span class="es-hours-time closed">Closed</span>
+            <span class="es-hours-day">Wednesday</span>
+            <span class="es-hours-time">5:00 PM – 10:00 PM</span>
+            <span class="es-hours-day">Thursday</span>
+            <span class="es-hours-time">5:00 PM – 10:00 PM</span>
+            <span class="es-hours-day">Friday</span>
+            <span class="es-hours-time">5:00 PM – 11:00 PM</span>
+            <span class="es-hours-day">Saturday</span>
+            <span class="es-hours-time">5:00 PM – 11:00 PM</span>
+            <span class="es-hours-day">Sunday</span>
+            <span class="es-hours-time">5:00 PM – 9:00 PM</span>
           </div>
         </div>
 
@@ -702,13 +702,13 @@
           </div>
 
           <div style="margin-top:var(--space-8);display:flex;gap:var(--space-3);">
-            <div class="price-level">
-              <span class="price-level-pip">$</span>
-              <span class="price-level-pip">$</span>
-              <span class="price-level-pip">$</span>
-              <span class="price-level-pip dim">$</span>
+            <div class="es-price-level">
+              <span class="es-price-level-pip">$</span>
+              <span class="es-price-level-pip">$</span>
+              <span class="es-price-level-pip">$</span>
+              <span class="es-price-level-pip dim">$</span>
             </div>
-            <span class="caption" style="align-self:center;">Upscale Dining</span>
+            <span class="es-caption" style="align-self:center;">Upscale Dining</span>
           </div>
         </div>
 
@@ -720,7 +720,7 @@
        FOOTER
   =================================================================== -->
   <footer class="site-footer">
-    <div class="container">
+    <div class="es-container">
       <div class="footer-grid">
         <div>
           <div class="footer-brand" id="footer-brand">Cinder &amp; Salt</div>

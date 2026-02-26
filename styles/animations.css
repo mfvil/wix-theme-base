@@ -73,19 +73,19 @@
    Animation utility classes
 -------------------------------------------------------------------------- */
 
-.animate-fade-in    { animation: fadeIn    var(--duration, 300ms) ease both; }
-.animate-fade-out   { animation: fadeOut   var(--duration, 300ms) ease both; }
-.animate-slide-up   { animation: slideUp   var(--duration, 300ms) ease both; }
-.animate-slide-down { animation: slideDown var(--duration, 300ms) ease both; }
-.animate-slide-left { animation: slideLeft var(--duration, 300ms) ease both; }
-.animate-slide-right{ animation: slideRight var(--duration, 300ms) ease both; }
-.animate-scale-in   { animation: scaleIn   var(--duration, 300ms) ease both; }
-.animate-scale-out  { animation: scaleOut  var(--duration, 300ms) ease both; }
-.animate-pulse      { animation: pulse     var(--duration, 2s) ease-in-out infinite; }
-.animate-bounce-in  { animation: bounceIn  var(--duration, 500ms) ease both; }
-.animate-spin       { animation: spin      var(--duration, 1s) linear infinite; }
+.es-animate-fade-in    { animation: fadeIn    var(--duration, 300ms) ease both; }
+.es-animate-fade-out   { animation: fadeOut   var(--duration, 300ms) ease both; }
+.es-animate-slide-up   { animation: slideUp   var(--duration, 300ms) ease both; }
+.es-animate-slide-down { animation: slideDown var(--duration, 300ms) ease both; }
+.es-animate-slide-left { animation: slideLeft var(--duration, 300ms) ease both; }
+.es-animate-slide-right{ animation: slideRight var(--duration, 300ms) ease both; }
+.es-animate-scale-in   { animation: scaleIn   var(--duration, 300ms) ease both; }
+.es-animate-scale-out  { animation: scaleOut  var(--duration, 300ms) ease both; }
+.es-animate-pulse      { animation: pulse     var(--duration, 2s) ease-in-out infinite; }
+.es-animate-bounce-in  { animation: bounceIn  var(--duration, 500ms) ease both; }
+.es-animate-spin       { animation: spin      var(--duration, 1s) linear infinite; }
 
-.animate-shimmer {
+.es-animate-shimmer {
   background: linear-gradient(
     90deg,
     var(--color-neutral-100) 25%,
@@ -100,30 +100,30 @@
    Duration modifiers
 -------------------------------------------------------------------------- */
 
-.duration-fast   { --duration: 150ms; }
-.duration-base   { --duration: 300ms; }
-.duration-slow   { --duration: 600ms; }
-.duration-slower { --duration: 1000ms; }
+.es-duration-fast   { --duration: 150ms; }
+.es-duration-base   { --duration: 300ms; }
+.es-duration-slow   { --duration: 600ms; }
+.es-duration-slower { --duration: 1000ms; }
 
 /* --------------------------------------------------------------------------
    Delay modifiers
 -------------------------------------------------------------------------- */
 
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.es-delay-100 { animation-delay: 100ms; }
+.es-delay-200 { animation-delay: 200ms; }
+.es-delay-300 { animation-delay: 300ms; }
+.es-delay-400 { animation-delay: 400ms; }
+.es-delay-500 { animation-delay: 500ms; }
 
 /* --------------------------------------------------------------------------
    Easing helpers (use via custom property override)
 -------------------------------------------------------------------------- */
 
-.ease-in      { animation-timing-function: ease-in; }
-.ease-out     { animation-timing-function: ease-out; }
-.ease-in-out  { animation-timing-function: ease-in-out; }
-.ease-bounce  { animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
-.ease-linear  { animation-timing-function: linear; }
+.es-ease-in      { animation-timing-function: ease-in; }
+.es-ease-out     { animation-timing-function: ease-out; }
+.es-ease-in-out  { animation-timing-function: ease-in-out; }
+.es-ease-bounce  { animation-timing-function: cubic-bezier(0.34, 1.56, 0.64, 1); }
+.es-ease-linear  { animation-timing-function: linear; }
 
 /* --------------------------------------------------------------------------
    Reduced motion — respect user preference
@@ -189,16 +189,16 @@
   to   { transform: scale(1.05); }
 }
 
-.animate-reveal-up   { animation: revealUp     var(--duration, 700ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
-.animate-plate-in    { animation: plateIn      var(--duration, 500ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
-.animate-ember-glow  { animation: emberGlow    var(--duration, 3s) ease-in-out infinite; }
-.animate-line-reveal { animation: lineReveal   var(--duration, 600ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
-.animate-ken-burns   { animation: heroKenBurns var(--duration, 12s) ease-in-out infinite alternate; }
+.es-animate-reveal-up   { animation: revealUp     var(--duration, 700ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
+.es-animate-plate-in    { animation: plateIn      var(--duration, 500ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
+.es-animate-ember-glow  { animation: emberGlow    var(--duration, 3s) ease-in-out infinite; }
+.es-animate-line-reveal { animation: lineReveal   var(--duration, 600ms) cubic-bezier(0.16, 1, 0.3, 1) both; }
+.es-animate-ken-burns   { animation: heroKenBurns var(--duration, 12s) ease-in-out infinite alternate; }
 
 /* Stagger helpers for menu items / card grids */
-.stagger-1 { animation-delay:  80ms; }
-.stagger-2 { animation-delay: 160ms; }
-.stagger-3 { animation-delay: 240ms; }
-.stagger-4 { animation-delay: 320ms; }
-.stagger-5 { animation-delay: 400ms; }
-.stagger-6 { animation-delay: 480ms; }
+.es-stagger-1 { animation-delay:  80ms; }
+.es-stagger-2 { animation-delay: 160ms; }
+.es-stagger-3 { animation-delay: 240ms; }
+.es-stagger-4 { animation-delay: 320ms; }
+.es-stagger-5 { animation-delay: 400ms; }
+.es-stagger-6 { animation-delay: 480ms; }

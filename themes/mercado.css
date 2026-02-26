@@ -70,53 +70,53 @@
 }
 
 /* --- Cards --- */
-.card, .card-elevated, .card-bordered {
+.card, .es-card-elevated, .es-card-bordered {
   background-color: #FFFFFF;
 }
 
-.card-elevated {
+.es-card-elevated {
   box-shadow: 0 4px 24px -4px rgba(30, 15, 8, 0.13), 0 1px 4px -1px rgba(30, 15, 8, 0.07);
 }
 
 /* --- Buttons --- */
-.btn-primary {
+.es-btn-primary {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: #ffffff;
 }
 
-.btn-primary:hover {
+.es-btn-primary:hover {
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-.btn-secondary {
+.es-btn-secondary {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   color: #ffffff;
 }
 
-.btn-outline {
+.es-btn-outline {
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.btn-outline:hover {
+.es-btn-outline:hover {
   background-color: var(--color-primary);
   color: #ffffff;
 }
 
 /* --- Reservation: terra cotta --- */
-.reservation-strip {
+.es-reservation-strip {
   background-color: var(--color-primary);
 }
 
-.btn-reservation {
+.es-btn-reservation {
   color: var(--color-primary);
 }
 
 /* --- Chef special: saffron border --- */
-.chef-special {
+.es-chef-special {
   border-left-color: var(--color-accent);
 }
 

@@ -67,57 +67,57 @@
 }
 
 /* --- Cards --- */
-.card, .card-elevated, .card-bordered {
+.card, .es-card-elevated, .es-card-bordered {
   background-color: #FFFFFF;
 }
 
-.card-elevated {
+.es-card-elevated {
   box-shadow: 0 4px 20px -4px rgba(28, 32, 24, 0.08), 0 1px 3px -1px rgba(28, 32, 24, 0.05);
 }
 
 /* --- Buttons --- */
-.btn-primary {
+.es-btn-primary {
   background-color: var(--color-primary);
   border-color: var(--color-primary);
   color: #ffffff;
 }
 
-.btn-primary:hover {
+.es-btn-primary:hover {
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-.btn-secondary {
+.es-btn-secondary {
   background-color: var(--color-secondary);
   border-color: var(--color-secondary);
   color: #ffffff;
 }
 
-.btn-outline {
+.es-btn-outline {
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.btn-outline:hover {
+.es-btn-outline:hover {
   background-color: var(--color-primary);
   color: #ffffff;
 }
 
 /* --- Reservation: sage --- */
-.reservation-strip {
+.es-reservation-strip {
   background-color: var(--color-primary);
 }
 
-.btn-reservation {
+.es-btn-reservation {
   color: var(--color-primary);
 }
 
 /* --- Chef special: dusty rose border for botanica --- */
-.chef-special {
+.es-chef-special {
   border-left-color: var(--color-secondary);
 }
 
-.chef-special::before {
+.es-chef-special::before {
   color: var(--color-secondary);
 }
 
