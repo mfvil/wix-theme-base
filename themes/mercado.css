@@ -20,37 +20,37 @@
 :root {
 
   /* Brand */
-  --color-primary:       #C44624;
-  --color-primary-dark:  #A03418;
-  --color-primary-light: #E05A36;
-  --color-secondary:     #0A786E;
-  --color-accent:        #D4922A;
-  --color-accent-text:   #9A6410;
+  --color-primary:       #E03A1A;   /* Hot chili red — punchy, loud */
+  --color-primary-dark:  #B82E12;
+  --color-primary-light: #FF5232;
+  --color-secondary:     #008C7A;   /* Vibrant teal — talavera tile */
+  --color-accent:        #F5A800;   /* Bright marigold / cempasúchil */
+  --color-accent-text:   #A06800;   /* Dark marigold — text-safe */
 
-  /* Backgrounds */
-  --color-bg:      #FFF9F5;
-  --color-surface: #F7EDE4;
+  /* Backgrounds — warm, punchy white with energy */
+  --color-bg:      #FFFAF4;
+  --color-surface: #FFF0E0;         /* Warm peach-orange surface */
 
   /* Text */
-  --color-text:       #1E0F08;
-  --color-text-muted: #7A5040;
+  --color-text:       #1A0A04;
+  --color-text-muted: #7A4A30;
 
   /* Borders */
-  --color-border: #EDD8CA;
+  --color-border: #F5D5B5;          /* Warm orange-tinted border */
 
   /* Status */
-  --color-success: #0A786E;
-  --color-warning: #D4922A;
-  --color-error:   #C44624;
+  --color-success: #008C7A;
+  --color-warning: #F5A800;
+  --color-error:   #E03A1A;
   --color-info:    #1A5CA8;
 
   /* Restaurant tokens */
-  --price-color:    #9A6410;
-  --ornament-color: #D4922A;
+  --price-color:    #A06800;
+  --ornament-color: #F5A800;
 
-  /* Bump font sizes for the punchy vivid vibe */
-  --font-size-5xl: 4rem;
-  --font-size-6xl: 5.5rem;
+  /* Bigger, louder display type */
+  --font-size-5xl: 4.25rem;
+  --font-size-6xl: 6rem;
 }
 
 /* --- Headings --- */
@@ -63,10 +63,10 @@
 .heading-1 { font-weight: 900; }
 .heading-2 { font-weight: 800; }
 
-/* Teal italic accent — contrast pop */
+/* Marigold italic accent — warm contrast pop */
 .heading-1 em, .heading-2 em, .heading-3 em {
   font-style: italic;
-  color: var(--color-secondary);
+  color: var(--color-accent);
 }
 
 /* --- Cards --- */
