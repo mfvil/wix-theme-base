@@ -1,792 +1,812 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="bistro">
+<html lang="en" data-theme="noir">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurant Theme Demo — wix-theme-base</title>
+  <title>Ember & Stone — Restaurant Design System Demo</title>
 
-  <!-- Google Fonts: Playfair Display + Cormorant Garamond + DM Sans -->
+  <!-- Fraunces + Plus Jakarta Sans + JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-  <!-- Base styles -->
+  <!-- Base -->
   <link rel="stylesheet" href="styles/tokens.css">
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/animations.css">
   <link rel="stylesheet" href="styles/utilities.css">
 
-  <!-- Inlined theme tokens — toggled via data-theme on <html> -->
   <style>
-    /* ---- Bistro Warm ---- */
-    :root[data-theme="bistro"] {
-      --font-sans:    "DM Sans", system-ui, sans-serif;
-      --font-serif:   "Cormorant Garamond", Georgia, serif;
-      --font-display: "Playfair Display", Georgia, serif;
-      --color-primary:       #8B1A1A;
-      --color-primary-dark:  #6B1212;
-      --color-primary-light: #B02626;
-      --color-secondary:     #2E5219;
+    /* =====================================================================
+       Theme token overrides — switched via data-theme on <html>
+    ===================================================================== */
+
+    /* --- NOIR --- */
+    :root[data-theme="noir"] {
+      --color-primary:       #E8A23A;
+      --color-primary-dark:  #C4821A;
+      --color-primary-light: #F0B85A;
+      --color-secondary:     #C4821A;
+      --color-accent:        #E8A23A;
+      --color-accent-text:   #E8A23A;
+      --color-bg:            #131110;
+      --color-surface:       #1C1A18;
+      --color-text:          #F5EFE6;
+      --color-text-muted:    #9E9088;
+      --color-border:        #2E2A26;
+      --price-color:         #E8A23A;
+      --ornament-color:      #E8A23A;
+      --hero-overlay:        linear-gradient(to bottom, rgb(0 0 0 / 0.05) 0%, rgb(0 0 0 / 0.78) 100%);
+    }
+
+    /* --- MERCADO --- */
+    :root[data-theme="mercado"] {
+      --color-primary:       #E03A1A;
+      --color-primary-dark:  #B82E12;
+      --color-primary-light: #FF5232;
+      --color-secondary:     #008C7A;
+      --color-accent:        #F5A800;
+      --color-accent-text:   #A06800;
+      --color-bg:            #FFFAF4;
+      --color-surface:       #FFF0E0;
+      --color-text:          #1A0A04;
+      --color-text-muted:    #7A4A30;
+      --color-border:        #F5D5B5;
+      --price-color:         #A06800;
+      --ornament-color:      #F5A800;
+      --font-size-5xl:       4.25rem;
+      --font-size-6xl:       6rem;
+    }
+
+    /* --- BOTANICA --- */
+    :root[data-theme="botanica"] {
+      --color-primary:       #3D6B45;
+      --color-primary-dark:  #2D5234;
+      --color-primary-light: #4E8058;
+      --color-secondary:     #B06070;
       --color-accent:        #C4922A;
-      --color-accent-text:   #7A5217;
-      --color-bg:            #FAF7F2;
-      --color-surface:       #F2EBE0;
-      --color-text:          #1A1209;
-      --color-text-muted:    #6B5347;
-      --color-border:        #E0D5C5;
-      --color-success:       #2A6B2A;
-      --color-warning:       #C4922A;
-      --color-error:         #C0392B;
-      --font-size-5xl:       3.5rem;
-      --font-size-4xl:       2.5rem;
-      --font-size-3xl:       2rem;
-      --letter-spacing-display: -0.02em;
+      --color-accent-text:   #8A6218;
+      --color-bg:            #FAF8F4;
+      --color-surface:       #F2EDE4;
+      --color-text:          #1C2018;
+      --color-text-muted:    #5E6858;
+      --color-border:        #DDD8CC;
+      --price-color:         #5E6858;
+      --ornament-color:      #3D6B45;
     }
 
-    /* ---- Fresh Modern ---- */
-    :root[data-theme="fresh"] {
-      --font-sans:    "DM Sans", system-ui, sans-serif;
-      --font-serif:   "Cormorant Garamond", Georgia, serif;
-      --font-display: "Playfair Display", Georgia, serif;
-      --color-primary:       #1F4A18;
-      --color-primary-dark:  #163512;
-      --color-primary-light: #2E6B22;
-      --color-secondary:     #A0432A;
-      --color-accent:        #D4A827;
-      --color-accent-text:   #7A5A10;
-      --color-bg:            #FAFAF6;
-      --color-surface:       #F2F5EE;
-      --color-text:          #1C1C12;
-      --color-text-muted:    #5A6048;
-      --color-border:        #D8DDD0;
-      --color-success:       #1F4A18;
-      --color-warning:       #D4A827;
-      --color-error:         #B83A22;
-      --font-size-5xl:       3.5rem;
-      --font-size-4xl:       2.5rem;
-      --font-size-3xl:       2rem;
-      --letter-spacing-display: -0.02em;
+    /* =====================================================================
+       Dark theme: component state overrides
+    ===================================================================== */
+
+    [data-theme="noir"] .card,
+    [data-theme="noir"] .card-elevated,
+    [data-theme="noir"] .card-bordered,
+    [data-theme="noir"] .dish-card {
+      background-color: var(--color-surface);
     }
 
-    /* ---- Cantina / Food Truck ---- */
-    :root[data-theme="cantina"] {
-      --font-sans:    "DM Sans", system-ui, sans-serif;
-      --font-serif:   "Cormorant Garamond", Georgia, serif;
-      --font-display: "Playfair Display", Georgia, serif;
-      --color-primary:       #C4241A;
-      --color-primary-dark:  #991710;
-      --color-primary-light: #E63028;
-      --color-secondary:     #0A7B73;
-      --color-accent:        #E8932A;
-      --color-accent-text:   #9E5F10;
-      --color-bg:            #FFF8F0;
-      --color-surface:       #F7EDE0;
-      --color-text:          #1C0F0A;
-      --color-text-muted:    #7A5040;
-      --color-border:        #EDD9C5;
-      --color-success:       #156B40;
-      --color-warning:       #E8932A;
-      --color-error:         #C4241A;
-      --font-size-5xl:       4rem;
-      --font-size-4xl:       2.75rem;
-      --font-size-3xl:       2.1rem;
-      --letter-spacing-display: -0.01em;
+    [data-theme="noir"] .card-elevated,
+    [data-theme="noir"] .dish-card.card-elevated {
+      box-shadow: 0 8px 40px -8px rgb(0 0 0 / 0.6), 0 2px 8px -2px rgb(0 0 0 / 0.4);
     }
 
-    /* ---- Cantina: teal italic accent ---- */
-    :root[data-theme="cantina"] .heading-1 em,
-    :root[data-theme="cantina"] .heading-2 em,
-    :root[data-theme="cantina"] .heading-3 em {
+    [data-theme="noir"] .card-footer { background-color: #131110; }
+
+    [data-theme="noir"] .btn-primary {
+      background-color: var(--color-accent);
+      border-color: var(--color-accent);
+      color: #131110;
+    }
+
+    [data-theme="noir"] .btn-outline {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+
+    [data-theme="noir"] .btn-outline:hover {
+      background-color: var(--color-accent);
+      color: #131110;
+    }
+
+    [data-theme="noir"] .reservation-strip {
+      background-color: var(--color-accent);
+      color: #131110;
+    }
+
+    [data-theme="noir"] .reservation-strip-title,
+    [data-theme="noir"] .reservation-strip-sub { color: #131110; }
+    [data-theme="noir"] .reservation-strip-sub { opacity: 0.65; }
+
+    [data-theme="noir"] .btn-reservation {
+      color: var(--color-accent);
+      background-color: #131110;
+    }
+
+    [data-theme="noir"] .input,
+    [data-theme="noir"] .textarea {
+      background-color: var(--color-surface);
+      color: var(--color-text);
+    }
+
+    [data-theme="noir"] .chef-special {
+      background-color: #1C1A18;
+    }
+
+    /* Botanica es-chef-special uses rose border */
+    [data-theme="botanica"] .chef-special {
+      border-left-color: var(--color-secondary);
+    }
+
+    [data-theme="botanica"] .chef-special::before {
       color: var(--color-secondary);
     }
 
-    /* Cantina spice + tag components */
-    .spice { display: inline-flex; gap: 2px; margin-left: var(--space-2); vertical-align: middle; }
-    .spice-pip { width: 8px; height: 8px; border-radius: 50%; background: var(--color-border); }
-    .spice-pip.hot { background: var(--color-primary); }
-    .menu-tag { display: inline-flex; align-items: center; padding: 1px 6px; font-size: 10px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; border-radius: var(--radius-full); margin-left: var(--space-2); }
-    .menu-tag-veg { background: #D4F0DC; color: #156B40; }
-    .menu-tag-gf  { background: #FFF0D4; color: #9E5F10; }
-    .menu-tag-hot { background: #FFE0DC; color: #991710; }
-    .menu-tag-new { background: #D4F0EE; color: #0A7B73; }
+    /* =====================================================================
+       Hero gradient backgrounds per theme (no real image needed)
+    ===================================================================== */
 
-    /* ---- Shared: apply display font to headings ---- */
-    :root[data-theme="bistro"] .heading-1,
-    :root[data-theme="bistro"] .heading-2,
-    :root[data-theme="bistro"] .heading-3,
-    :root[data-theme="bistro"] .heading-4,
-    :root[data-theme="bistro"] .heading-5,
-    :root[data-theme="bistro"] .heading-6,
-    :root[data-theme="fresh"] .heading-1,
-    :root[data-theme="fresh"] .heading-2,
-    :root[data-theme="fresh"] .heading-3,
-    :root[data-theme="fresh"] .heading-4,
-    :root[data-theme="fresh"] .heading-5,
-    :root[data-theme="fresh"] .heading-6,
-    :root[data-theme="cantina"] .heading-1,
-    :root[data-theme="cantina"] .heading-2,
-    :root[data-theme="cantina"] .heading-3,
-    :root[data-theme="cantina"] .heading-4,
-    :root[data-theme="cantina"] .heading-5,
-    :root[data-theme="cantina"] .heading-6 {
-      font-family: var(--font-display);
-      letter-spacing: var(--letter-spacing-display);
+    [data-theme="noir"] .restaurant-hero {
+      background: linear-gradient(160deg, #2C1A06 0%, #131110 40%, #0D0B09 100%);
     }
 
-    .quote, .menu-description {
-      font-family: var(--font-serif);
-      font-size: var(--font-size-xl);
-      font-style: italic;
-      line-height: var(--line-height-relaxed);
-      color: var(--color-text-muted);
+    [data-theme="mercado"] .restaurant-hero {
+      background: linear-gradient(160deg, #E03A1A 0%, #A01A08 40%, #007A6A 100%);
     }
 
-    .menu-item {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: var(--space-4);
-      padding: var(--space-4) 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-    .menu-item:last-child { border-bottom: none; }
-    .menu-item-name {
-      font-family: var(--font-display);
-      font-size: var(--font-size-lg);
-      font-weight: 500;
-    }
-    .menu-item-desc {
-      font-size: var(--font-size-sm);
-      color: var(--color-text-muted);
-      margin-top: var(--space-1);
-      line-height: var(--line-height-relaxed);
-    }
-    .menu-item-price {
-      font-family: var(--font-display);
-      font-size: var(--font-size-lg);
-      font-weight: 600;
-      color: var(--color-primary);
-      white-space: nowrap;
+    [data-theme="botanica"] .restaurant-hero {
+      background: linear-gradient(160deg, #2D5234 0%, #3D6B45 50%, #B06070 100%);
     }
 
-    .divider-ornament {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      margin: var(--space-8) 0;
-      color: var(--color-accent-text);
-    }
-    .divider-ornament::before,
-    .divider-ornament::after {
-      content: "";
-      flex: 1;
-      height: 1px;
-      background: linear-gradient(to right, transparent, var(--color-accent), transparent);
-    }
-  </style>
+    /* =====================================================================
+       Demo chrome: theme switcher + page layout
+    ===================================================================== */
 
-  <style>
     body {
-      font-family: var(--font-sans);
+      margin: 0;
+      padding: 0;
       background-color: var(--color-bg);
       color: var(--color-text);
-      margin: 0;
+      font-family: var(--font-sans);
       transition: background-color 0.4s ease, color 0.4s ease;
     }
 
-    /* Theme switcher bar */
-    .theme-bar {
+    .theme-switcher {
       position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: var(--z-sticky);
-      background: #1a1a1a;
-      color: #fff;
-      padding: 10px var(--space-6);
+      top: var(--space-5);
+      right: var(--space-5);
+      z-index: var(--z-toast);
       display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      font-size: 13px;
-      font-family: monospace;
+      gap: var(--space-2);
+      background-color: rgb(0 0 0 / 0.5);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: var(--space-2);
+      border-radius: var(--radius-full);
+      border: 1px solid rgb(255 255 255 / 0.12);
     }
-
-    .theme-bar span { color: #aaa; }
 
     .theme-btn {
-      padding: 4px 14px;
-      border-radius: 4px;
-      border: 1px solid #555;
-      background: transparent;
-      color: #fff;
+      padding: var(--space-2) var(--space-4);
+      border: none;
+      border-radius: var(--radius-full);
+      font-family: var(--font-sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
       cursor: pointer;
-      font-size: 12px;
-      transition: background 0.2s;
+      color: rgb(255 255 255 / 0.6);
+      background: transparent;
+      transition: all 0.2s ease;
     }
 
-    .theme-btn.active { background: #fff; color: #1a1a1a; }
-    .theme-btn:hover:not(.active) { background: #333; }
+    .theme-btn:hover { color: #ffffff; }
 
-    /* Page layout */
-    .page { padding-top: 52px; }
+    .theme-btn.active {
+      background-color: #ffffff;
+      color: #131110;
+    }
 
-    /* Hero section */
-    .hero {
-      min-height: 80vh;
+    /* Site nav */
+    .site-nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: var(--z-sticky);
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: var(--space-20) var(--space-6);
-      border-bottom: 1px solid var(--color-border);
-      background-color: var(--color-bg);
+      justify-content: space-between;
+      padding: var(--space-6) var(--space-8);
     }
 
-    .hero-eyebrow {
+    .site-nav-logo {
+      font-family: var(--font-display);
+      font-size: var(--font-size-xl);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: var(--letter-spacing-display);
+      text-decoration: none;
+    }
+
+    .site-nav-links {
+      display: flex;
+      gap: var(--space-6);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-nav-links a {
       font-family: var(--font-sans);
       font-size: var(--font-size-xs);
       font-weight: 600;
-      letter-spacing: 0.2em;
+      letter-spacing: var(--letter-spacing-wider);
       text-transform: uppercase;
-      color: var(--color-accent-text);
+      color: rgb(255 255 255 / 0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .site-nav-links a:hover { color: #ffffff; }
+
+    /* Page sections */
+    .section { padding: var(--space-20) 0; }
+    .section-tight { padding: var(--space-12) 0; }
+
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: var(--letter-spacing-widest);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-6);
+      display: block;
+    }
+
+    .two-col {
+      display: grid;
+      es-grid-template-columns: 1fr 1fr;
+      gap: var(--space-16);
+      align-items: start;
+    }
+
+    @media (max-width: 768px) {
+      .two-col { es-grid-template-columns: 1fr; gap: var(--space-10); }
+      .site-nav-links { display: none; }
+      .restaurant-hero-title { font-size: var(--font-size-4xl); }
+    }
+
+    /* Footer */
+    .site-footer {
+      background-color: var(--color-surface);
+      border-top: 1px solid var(--color-border);
+      padding: var(--space-16) 0 var(--space-10);
+      margin-top: var(--space-20);
+    }
+
+    .footer-grid {
+      display: grid;
+      es-grid-template-columns: 2fr 1fr 1fr;
+      gap: var(--space-12);
+    }
+
+    .footer-brand {
+      font-family: var(--font-display);
+      font-size: var(--font-size-2xl);
+      font-weight: 800;
+      letter-spacing: var(--letter-spacing-display);
+      color: var(--color-text);
       margin-bottom: var(--space-4);
     }
 
-    .hero-title {
+    .footer-tagline {
       font-family: var(--font-display);
-      font-size: clamp(2.5rem, 7vw, 5.5rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-6);
-      max-width: 700px;
-    }
-
-    .hero-title em {
       font-style: italic;
-      color: var(--color-primary);
-    }
-
-    .hero-sub {
-      font-family: var(--font-serif);
-      font-size: var(--font-size-xl);
-      font-style: italic;
-      color: var(--color-text-muted);
-      max-width: 480px;
-      line-height: 1.7;
-      margin-bottom: var(--space-8);
-    }
-
-    /* Section styles */
-    section {
-      padding: var(--space-20) var(--space-6);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .section-label {
-      font-size: var(--font-size-xs);
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--color-accent-text);
-      margin-bottom: var(--space-3);
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: var(--font-size-4xl);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: var(--space-2);
-    }
-
-    .section-subtitle {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--color-text-muted);
-      font-size: var(--font-size-lg);
-      margin-bottom: var(--space-10);
-    }
-
-    /* Color swatch grid */
-    .swatches {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-4);
-      margin-top: var(--space-6);
-    }
-
-    .swatch-block {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-    }
-
-    .swatch {
-      width: 80px;
-      height: 80px;
-      border-radius: var(--radius-md);
-      border: 1px solid rgba(0,0,0,0.1);
-      transition: background-color 0.4s ease;
-    }
-
-    .swatch-name {
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--color-text-muted);
-      text-align: center;
-    }
-
-    .swatch-value {
-      font-size: 10px;
-      color: var(--color-text-muted);
-      text-align: center;
-      opacity: 0.7;
-    }
-
-    /* Menu section */
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: var(--space-10);
-    }
-
-    .menu-category-title {
-      font-family: var(--font-display);
-      font-size: var(--font-size-2xl);
-      font-weight: 600;
-      margin-bottom: var(--space-1);
-    }
-
-    .menu-category-desc {
-      font-family: var(--font-serif);
-      font-style: italic;
-      color: var(--color-text-muted);
       font-size: var(--font-size-base);
+      color: var(--color-text-muted);
+      line-height: var(--line-height-relaxed);
+    }
+
+    .footer-heading {
+      font-family: var(--font-sans);
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: var(--letter-spacing-widest);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-5);
+    }
+
+    .footer-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .footer-links a {
+      font-family: var(--font-sans);
+      font-size: var(--font-size-sm);
+      color: var(--color-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--color-text); }
+
+    .footer-bottom {
+      margin-top: var(--space-12);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-family: var(--font-sans);
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+    }
+
+    /* Inset section */
+    .section-inset {
+      background-color: var(--color-surface);
+      padding: var(--space-20) 0;
+    }
+
+    /* Contact block */
+    .contact-item {
       margin-bottom: var(--space-6);
     }
 
-    /* Type specimen */
-    .type-specimen {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-6);
-    }
-
-    .type-row {
-      display: flex;
-      align-items: baseline;
-      gap: var(--space-6);
-      padding-bottom: var(--space-4);
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .type-meta {
-      width: 160px;
-      flex-shrink: 0;
-      font-family: monospace;
-      font-size: 11px;
+    .contact-label {
+      font-family: var(--font-sans);
+      font-size: var(--font-size-xs);
+      font-weight: 700;
+      letter-spacing: var(--letter-spacing-wider);
+      text-transform: uppercase;
       color: var(--color-text-muted);
-      line-height: 1.6;
+      margin-bottom: var(--space-2);
+      display: block;
     }
 
-    /* Accessible contrast note */
-    .contrast-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: var(--space-3);
-      margin-top: var(--space-6);
-    }
-
-    .contrast-chip {
-      padding: var(--space-4);
-      border-radius: var(--radius-md);
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-    }
-
-    .contrast-ratio {
-      font-size: var(--font-size-2xl);
-      font-weight: 700;
-      line-height: 1;
-    }
-
-    .contrast-label {
-      font-size: 11px;
-      opacity: 0.8;
-    }
-
-    .contrast-badge {
-      display: inline-block;
-      font-size: 10px;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 3px;
-      background: rgba(255,255,255,0.25);
-      margin-top: var(--space-1);
-      letter-spacing: 0.05em;
+    .contact-value {
+      font-family: var(--font-display);
+      font-size: var(--font-size-xl);
+      color: var(--color-text);
     }
   </style>
 </head>
-<body class="page">
+<body>
 
-  <!-- Theme switcher -->
-  <div class="theme-bar">
-    <span>theme:</span>
-    <button id="btn-bistro" class="theme-btn active" onclick="setTheme('bistro', this)">🍷 Bistro Warm</button>
-    <button class="theme-btn" onclick="setTheme('fresh', this)">🌿 Fresh Modern</button>
-    <button class="theme-btn" onclick="setTheme('cantina', this)">🌶️ Cantina</button>
-    <span style="margin-left:auto; opacity:0.5">wix-theme-base restaurant demo</span>
+  <!-- Theme Switcher -->
+  <div class="theme-switcher" role="group" aria-label="Theme switcher">
+    <button class="theme-btn active" data-theme-target="noir" onclick="setTheme('noir', this)">Noir</button>
+    <button class="theme-btn" data-theme-target="mercado" onclick="setTheme('mercado', this)">Mercado</button>
+    <button class="theme-btn" data-theme-target="botanica" onclick="setTheme('botanica', this)">Botanica</button>
   </div>
 
-  <!-- Hero -->
-  <div class="hero animate-fade-in">
-    <p class="hero-eyebrow" id="hero-eyebrow">Est. 2024 &nbsp;·&nbsp; Austin, Texas</p>
-    <h1 class="hero-title" id="hero-title">Where Every Meal Becomes <em>a Memory</em></h1>
-    <p class="hero-sub" id="hero-sub">Fresh ingredients, honest cooking, and a table always waiting for you.</p>
-    <div class="flex gap-4">
-      <button class="btn btn-primary btn-lg">Reserve a Table</button>
-      <button class="btn btn-outline btn-lg">View Menu</button>
+  <!-- ===================================================================
+       HERO
+  =================================================================== -->
+  <section class="es-restaurant-hero">
+    <nav class="site-nav">
+      <a href="#" class="site-nav-logo" id="nav-logo">Cinder &amp; Salt</a>
+      <ul class="site-nav-links">
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Events</a></li>
+        <li><a href="#">Reserve</a></li>
+      </ul>
+    </nav>
+
+    <div class="es-restaurant-hero-content">
+      <div class="es-container">
+        <span class="es-restaurant-hero-eyebrow" id="hero-eyebrow">Est. 2019 · Austin, Texas</span>
+        <h1 class="es-restaurant-hero-title es-animate-reveal-up" id="hero-title">
+          Fire-kissed.<br><em>Honestly sourced.</em>
+        </h1>
+        <p class="es-restaurant-hero-subtitle es-animate-reveal-up es-stagger-2" id="hero-sub">
+          A steakhouse built on wood smoke and obsession. Every cut aged in-house, every sauce made from scratch, every night worth remembering.
+        </p>
+        <div class="es-restaurant-hero-actions es-animate-reveal-up es-stagger-3">
+          <a href="#" class="es-btn es-btn-lg es-btn-primary">Reserve a Table</a>
+          <a href="#" class="es-btn es-btn-lg es-btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.5)">View Menu</a>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <!-- ===================================================================
+       CHEF'S SPECIAL
+  =================================================================== -->
+  <section class="section">
+    <div class="es-container">
+      <span class="es-overline" style="display:block;margin-bottom:var(--space-6)">Tonight's Feature</span>
+      <div class="es-chef-special">
+        <span class="es-chef-special-label">Chef's Selection</span>
+        <div class="es-chef-special-name" id="special-name">45-Day Dry-Aged Bone-In Ribeye</div>
+        <p class="es-chef-special-desc" id="special-desc">
+          Prime Black Angus, dry-aged in our in-house Himalayan salt cave. Finished over live oak coals with a bone marrow butter baste. Served with ember-roasted shallots and hand-cut frites.
+        </p>
+        <div style="display:flex;align-items:center;gap:var(--space-6);">
+          <span class="es-chef-special-price">$92</span>
+          <div class="es-dietary-tag es-dietary-tag-gf">GF</div>
+          <div class="es-dietary-tag es-dietary-tag-popular">Signature</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================================
+       MENU
+  =================================================================== -->
+  <section class="section-inset">
+    <div class="es-container">
+      <span class="section-label">The Menu</span>
+
+      <div class="two-col">
+
+        <!-- Column 1 -->
+        <div>
+          <!-- Starters -->
+          <div class="es-menu-section">
+            <div class="es-menu-section-header">
+              <span class="es-menu-section-title">Starters</span>
+              <div class="es-menu-section-line"></div>
+            </div>
+            <p class="es-menu-section-desc">Small plates to open the palate.</p>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Bone Marrow Toast</span>
+              <span class="es-menu-item-price">$18</span>
+              <span class="es-menu-item-desc">Roasted femur, grilled sourdough, chimichurri, fleur de sel.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-new">New</span>
+              </div>
+            </div>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Beef Tartare</span>
+              <span class="es-menu-item-price">$22</span>
+              <span class="es-menu-item-desc">Hand-chopped prime tenderloin, capers, cornichons, Dijon, quail egg.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+              </div>
+            </div>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Charred Octopus</span>
+              <span class="es-menu-item-price">$26</span>
+              <span class="es-menu-item-desc">Spanish octopus, smoked paprika aioli, pickled fennel, crispy capers.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+                <span class="es-dietary-tag es-dietary-tag-popular">Popular</span>
+              </div>
+            </div>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Charcuterie Board</span>
+              <span class="es-menu-item-price">$38</span>
+              <span class="es-menu-item-desc">House-cured meats, aged cheeses, honeycomb, pickles, toasted bread.</span>
+              <div class="es-menu-item-tags"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div>
+          <!-- Mains -->
+          <div class="es-menu-section">
+            <div class="es-menu-section-header">
+              <span class="es-menu-section-title">From the Fire</span>
+              <div class="es-menu-section-line"></div>
+            </div>
+            <p class="es-menu-section-desc">All cuts finished over live wood coals.</p>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Filet Mignon 8oz</span>
+              <span class="es-menu-item-price">$68</span>
+              <span class="es-menu-item-desc">Tenderloin, black truffle compound butter, potato gratin.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+              </div>
+            </div>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">NY Strip 14oz</span>
+              <span class="es-menu-item-price">$74</span>
+              <span class="es-menu-item-desc">21-day aged, roasted bone marrow, bordelaise, watercress.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+              </div>
+            </div>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Smoked Duck Breast</span>
+              <span class="es-menu-item-price">$52</span>
+              <span class="es-menu-item-desc">Cherry wood smoked, sour cherry gastrique, farro, roasted beets.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+              </div>
+            </div>
+
+            <div class="es-menu-item">
+              <span class="es-menu-item-name">Whole Roasted Cauliflower</span>
+              <span class="es-menu-item-price">$38</span>
+              <span class="es-menu-item-desc">Harissa, preserved lemon yogurt, pomegranate, herb oil.</span>
+              <div class="es-menu-item-tags">
+                <span class="es-dietary-tag es-dietary-tag-vegan">Vegan</span>
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Ornamental divider -->
+  <div class="es-container">
+    <div class="es-divider-ornament">✦</div>
   </div>
 
-  <!-- Color Palette -->
-  <section>
-    <div class="container">
-      <p class="section-label">Style Guide</p>
-      <h2 class="section-title">Color Palette</h2>
-      <p class="section-subtitle">All colors verified WCAG AA compliant</p>
+  <!-- ===================================================================
+       DISH CARDS
+  =================================================================== -->
+  <section class="section">
+    <div class="es-container">
+      <span class="section-label">Featured Dishes</span>
+      <h2 class="es-heading-2" style="margin-bottom:var(--space-10)">This <em>Season</em></h2>
 
-      <div class="swatches">
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-primary)"></div>
-          <div class="swatch-name">Primary</div>
-          <div class="swatch-value" id="swatch-primary"></div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-primary-dark)"></div>
-          <div class="swatch-name">Primary Dark</div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-secondary)"></div>
-          <div class="swatch-name">Secondary</div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-accent)"></div>
-          <div class="swatch-name">Accent Gold</div>
-          <div class="swatch-value">large text only</div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-accent-text)"></div>
-          <div class="swatch-name">Accent Text</div>
-          <div class="swatch-value">all sizes ✓</div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-bg); border:1px solid var(--color-border)"></div>
-          <div class="swatch-name">Background</div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-surface)"></div>
-          <div class="swatch-name">Surface</div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-text)"></div>
-          <div class="swatch-name">Text</div>
-        </div>
-        <div class="swatch-block">
-          <div class="swatch" style="background:var(--color-text-muted)"></div>
-          <div class="swatch-name">Text Muted</div>
-        </div>
-      </div>
+      <div class="es-grid-3">
 
-      <!-- Contrast proofs -->
-      <div class="contrast-grid" style="margin-top: var(--space-10)">
-        <div class="contrast-chip" style="background:var(--color-bg); border: 1px solid var(--color-border); color:var(--color-text)">
-          <div class="contrast-ratio">16–17:1</div>
-          <div class="contrast-label">Text on Background</div>
-          <span class="contrast-badge" style="background:var(--color-primary); color:#fff">AAA</span>
+        <div class="es-dish-card">
+          <div class="es-dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-surface) 0%, var(--color-stone-300) 100%);"></div>
+          <div class="es-dish-card-body">
+            <div class="es-dish-card-name">Wagyu A5 Tataki</div>
+            <p class="es-dish-card-desc">Thinly sliced Japanese Wagyu, truffle ponzu, pickled daikon, micro shiso. A study in restraint.</p>
+            <div class="es-dish-card-footer">
+              <span class="es-dish-card-price">$48</span>
+              <div style="display:flex;gap:var(--space-2);">
+                <span class="es-dietary-tag es-dietary-tag-gf">GF</span>
+                <span class="es-dietary-tag es-dietary-tag-new">New</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="contrast-chip" style="background:var(--color-bg); border: 1px solid var(--color-border); color:var(--color-text-muted)">
-          <div class="contrast-ratio">5.3:1</div>
-          <div class="contrast-label">Muted Text on Background</div>
-          <span class="contrast-badge" style="background:var(--color-primary); color:#fff">AA</span>
+
+        <div class="es-dish-card">
+          <div class="es-dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-stone-200) 0%, var(--color-stone-400) 100%);"></div>
+          <div class="es-dish-card-body">
+            <div class="es-dish-card-name">Lobster Bisque</div>
+            <p class="es-dish-card-desc">Maine lobster, cream, brandy, house-made croutons, chive oil. The dish that built our reputation.</p>
+            <div class="es-dish-card-footer">
+              <span class="es-dish-card-price">$24</span>
+              <div style="display:flex;gap:var(--space-2);">
+                <span class="es-dietary-tag es-dietary-tag-popular">Signature</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="contrast-chip" style="background:var(--color-primary); color:#fff">
-          <div class="contrast-ratio">10–13:1</div>
-          <div class="contrast-label">White on Primary</div>
-          <span class="contrast-badge">AAA</span>
+
+        <div class="es-dish-card">
+          <div class="es-dish-card-image-placeholder" style="background:linear-gradient(135deg, var(--color-stone-700) 20%, var(--color-stone-500) 100%);"></div>
+          <div class="es-dish-card-body">
+            <div class="es-dish-card-name">Dark Chocolate Torte</div>
+            <p class="es-dish-card-desc">72% Valrhona, espresso ganache, smoked sea salt caramel, candied hazelnut. Deeply, unapologetically rich.</p>
+            <div class="es-dish-card-footer">
+              <span class="es-dish-card-price">$18</span>
+              <div style="display:flex;gap:var(--space-2);">
+                <span class="es-dietary-tag es-dietary-tag-veg">V</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="contrast-chip" style="background:var(--color-secondary); color:#fff">
-          <div class="contrast-ratio">8–13:1</div>
-          <div class="contrast-label">White on Secondary</div>
-          <span class="contrast-badge">AAA</span>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Typography Specimen -->
-  <section>
-    <div class="container">
-      <p class="section-label">Typography</p>
-      <h2 class="section-title">Type System</h2>
-      <p class="section-subtitle">Playfair Display · Cormorant Garamond · DM Sans</p>
+  <!-- ===================================================================
+       REVIEWS
+  =================================================================== -->
+  <section class="section-inset">
+    <div class="es-container">
+      <span class="section-label">What People Say</span>
 
-      <div class="type-specimen">
-        <div class="type-row">
-          <div class="type-meta">Playfair Display<br>700 · 56px<br>Heading 1</div>
-          <h1 class="heading-1" style="margin:0">A Table for Two</h1>
+      <div class="es-grid-3">
+
+        <div class="es-review-quote">
+          <div class="es-review-stars">★★★★★</div>
+          <p class="es-review-quote-text">The bone-in ribeye was the single best piece of beef I've eaten in my life. No hyperbole. The aging program here is something else entirely.</p>
+          <span class="es-review-quote-author">— Marcus T., Austin Chronicle</span>
         </div>
-        <div class="type-row">
-          <div class="type-meta">Playfair Display<br>700 · 40px<br>Heading 2</div>
-          <h2 class="heading-2" style="margin:0">Tonight's Specials</h2>
+
+        <div class="es-review-quote">
+          <div class="es-review-stars">★★★★★</div>
+          <p class="es-review-quote-text">Walked in for a birthday dinner, left feeling like we'd experienced something rare. The service alone earns a second visit.</p>
+          <span class="es-review-quote-author">— Priya N., Google Review</span>
         </div>
-        <div class="type-row">
-          <div class="type-meta">Playfair Display<br>600 · 32px<br>Heading 3</div>
-          <h3 class="heading-3" style="margin:0">From Our Kitchen</h3>
+
+        <div class="es-review-quote">
+          <div class="es-review-stars">★★★★★</div>
+          <p class="es-review-quote-text">Dark, intimate, impossibly good. The tartare and a glass of Barolo is my new religion. I've been back four times this month.</p>
+          <span class="es-review-quote-author">— James V., Yelp Elite</span>
         </div>
-        <div class="type-row">
-          <div class="type-meta">Playfair Display<br>Italic · 28px<br>Pull Quote</div>
-          <p class="quote" style="margin:0">"Every dish tells a story of the land it came from."</p>
-        </div>
-        <div class="type-row">
-          <div class="type-meta">DM Sans<br>400 · 18px<br>Lead / Body</div>
-          <p class="lead" style="margin:0">We source our ingredients from local farms within 100 miles of Austin, partnering with growers who share our commitment to sustainable agriculture.</p>
-        </div>
-        <div class="type-row">
-          <div class="type-meta">DM Sans<br>400 · 16px<br>Body Base</div>
-          <p class="body-base" style="margin:0">Our menu changes seasonally to reflect the best of what's available. We believe in honest, unfussy cooking — techniques that let the ingredients speak for themselves.</p>
-        </div>
-        <div class="type-row">
-          <div class="type-meta">DM Sans<br>600 · 11px<br>Overline</div>
-          <span class="overline">Seasonal Menu · Spring 2026</span>
-        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Menu Items -->
-  <section>
-    <div class="container">
-      <p class="section-label">Menu Component</p>
-      <h2 class="section-title">Sample Menu</h2>
-      <p class="section-subtitle">A restaurant-specific component included in both themes</p>
+  <!-- ===================================================================
+       RESERVATION STRIP
+  =================================================================== -->
+  <section class="es-reservation-strip">
+    <div class="es-container">
+      <div class="es-reservation-strip-title" id="res-title">Make Your Reservation</div>
+      <p class="es-reservation-strip-sub">Dinner service nightly from 5 PM. Private dining available for parties of 10+.</p>
+      <a href="#" class="es-btn-reservation">Book a Table</a>
+    </div>
+  </section>
 
-      <div class="menu-grid">
+  <!-- ===================================================================
+       HOURS + CONTACT
+  =================================================================== -->
+  <section class="section">
+    <div class="es-container">
+      <div class="two-col">
+
+        <!-- Hours -->
         <div>
-          <h3 class="menu-category-title">Starters</h3>
-          <p class="menu-category-desc">Begin with something memorable</p>
-
-          <div class="menu-item">
-            <div>
-              <div class="menu-item-name">Burrata & Heirloom Tomato</div>
-              <div class="menu-item-desc">Fresh burrata, summer tomatoes, basil oil, fleur de sel</div>
-            </div>
-            <div class="menu-item-price">$18</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item-name">Beef Tartare</div>
-              <div class="menu-item-desc">Hand-cut prime beef, caper aioli, cornichon, grilled sourdough</div>
-            </div>
-            <div class="menu-item-price">$24</div>
-          </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item-name">Roasted Beet Salad</div>
-              <div class="menu-item-desc">Chioggia beets, whipped goat cheese, candied walnut, sherry vinaigrette</div>
-            </div>
-            <div class="menu-item-price">$16</div>
+          <span class="section-label">Hours</span>
+          <div class="es-hours-grid">
+            <span class="es-hours-day closed">Monday</span>
+            <span class="es-hours-time closed">Closed</span>
+            <span class="es-hours-day closed">Tuesday</span>
+            <span class="es-hours-time closed">Closed</span>
+            <span class="es-hours-day">Wednesday</span>
+            <span class="es-hours-time">5:00 PM – 10:00 PM</span>
+            <span class="es-hours-day">Thursday</span>
+            <span class="es-hours-time">5:00 PM – 10:00 PM</span>
+            <span class="es-hours-day">Friday</span>
+            <span class="es-hours-time">5:00 PM – 11:00 PM</span>
+            <span class="es-hours-day">Saturday</span>
+            <span class="es-hours-time">5:00 PM – 11:00 PM</span>
+            <span class="es-hours-day">Sunday</span>
+            <span class="es-hours-time">5:00 PM – 9:00 PM</span>
           </div>
         </div>
 
+        <!-- Contact -->
         <div>
-          <h3 class="menu-category-title">Mains</h3>
-          <p class="menu-category-desc">Crafted with care, served with intention</p>
+          <span class="section-label">Find Us</span>
 
-          <div class="menu-item">
-            <div>
-              <div class="menu-item-name">Dry-Aged Duck Breast</div>
-              <div class="menu-item-desc">Sour cherry jus, celery root purée, roasted radicchio</div>
-            </div>
-            <div class="menu-item-price">$42</div>
+          <div class="contact-item">
+            <span class="contact-label">Address</span>
+            <div class="contact-value">1803 South Congress Ave<br>Austin, Texas 78704</div>
           </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item-name">Grilled Branzino</div>
-              <div class="menu-item-desc">Whole fish, salsa verde, braised fennel, preserved lemon</div>
-            </div>
-            <div class="menu-item-price">$38</div>
+
+          <div class="contact-item">
+            <span class="contact-label">Phone</span>
+            <div class="contact-value">(512) 555-0184</div>
           </div>
-          <div class="menu-item">
-            <div>
-              <div class="menu-item-name">Black Truffle Risotto</div>
-              <div class="menu-item-desc">Carnaroli rice, 24-month Parmigiano, black truffle, chive</div>
+
+          <div class="contact-item">
+            <span class="contact-label">Email</span>
+            <div class="contact-value">hello@cinderandsalt.com</div>
+          </div>
+
+          <div style="margin-top:var(--space-8);display:flex;gap:var(--space-3);">
+            <div class="es-price-level">
+              <span class="es-price-level-pip">$</span>
+              <span class="es-price-level-pip">$</span>
+              <span class="es-price-level-pip">$</span>
+              <span class="es-price-level-pip dim">$</span>
             </div>
-            <div class="menu-item-price">$36</div>
+            <span class="es-caption" style="align-self:center;">Upscale Dining</span>
           </div>
         </div>
-      </div>
 
-      <div class="divider-ornament" style="margin: var(--space-12) 0">✦</div>
-    </div>
-  </section>
-
-  <!-- Buttons & UI -->
-  <section>
-    <div class="container">
-      <p class="section-label">UI Components</p>
-      <h2 class="section-title">Buttons & Elements</h2>
-      <p class="section-subtitle">Theme colors applied to all base components</p>
-
-      <div class="flex flex-wrap gap-3 mb-6">
-        <button class="btn btn-primary btn-lg">Reserve Now</button>
-        <button class="btn btn-outline btn-lg">View Full Menu</button>
-        <button class="btn btn-secondary">Order Online</button>
-        <button class="btn btn-ghost">Learn More</button>
-      </div>
-
-      <div class="flex flex-wrap gap-3 mb-8">
-        <span class="badge badge-success">Open Now</span>
-        <span class="badge badge-warning">Reservations Required</span>
-        <span class="badge badge-primary">New Menu</span>
-        <span class="badge badge-outline">Seasonal</span>
-      </div>
-
-      <div class="grid-3">
-        <div class="card card-elevated p-6 text-center animate-slide-up">
-          <div class="heading-4 mb-1">Dine In</div>
-          <p class="body-sm text-muted mb-4">Tue–Sun, 5–10 PM<br>Brunch Sat–Sun, 10 AM–2 PM</p>
-          <button class="btn btn-primary btn-sm">Reserve</button>
-        </div>
-        <div class="card card-elevated p-6 text-center animate-slide-up delay-100">
-          <div class="heading-4 mb-1">Private Events</div>
-          <p class="body-sm text-muted mb-4">Full buyouts &amp; private<br>dining room available</p>
-          <button class="btn btn-outline btn-sm">Inquire</button>
-        </div>
-        <div class="card card-elevated p-6 text-center animate-slide-up delay-200">
-          <div class="heading-4 mb-1">Gift Cards</div>
-          <p class="body-sm text-muted mb-4">The perfect gift for any<br>occasion or celebration</p>
-          <button class="btn btn-ghost btn-sm">Purchase</button>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Cantina-specific menu section -->
-  <section id="cantina-section" style="display:none">
-    <div class="container">
-      <p class="section-label">Cantina Components</p>
-      <h2 class="section-title">El Menú <em>de Hoy</em></h2>
-      <p class="section-subtitle">Spice indicators and menu tags — cantina-specific components</p>
-
-      <div style="max-width: 540px;">
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">
-              Al Pastor Taco
-              <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip"></span></span>
-              <span class="menu-tag menu-tag-new">New</span>
-            </div>
-            <div class="menu-item-desc">Spit-roasted pork, pineapple, white onion, cilantro, corn tortilla</div>
-          </div>
-          <div class="menu-item-price">$5</div>
+  <!-- ===================================================================
+       FOOTER
+  =================================================================== -->
+  <footer class="site-footer">
+    <div class="es-container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand" id="footer-brand">Cinder &amp; Salt</div>
+          <p class="footer-tagline">Fire-kissed food. Honestly sourced.<br>Nightly in South Congress.</p>
         </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">
-              Barbacoa Quesabirria
-              <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip hot"></span></span>
-            </div>
-            <div class="menu-item-desc">Slow-braised beef, Oaxacan cheese, consommé for dipping</div>
-          </div>
-          <div class="menu-item-price">$14</div>
+        <div>
+          <div class="footer-heading">Navigate</div>
+          <ul class="footer-links">
+            <li><a href="#">Menu</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Private Dining</a></li>
+            <li><a href="#">Gift Cards</a></li>
+          </ul>
         </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">
-              Calabacitas Bowl
-              <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip"></span><span class="spice-pip"></span></span>
-              <span class="menu-tag menu-tag-veg">Veg</span>
-              <span class="menu-tag menu-tag-gf">GF</span>
-            </div>
-            <div class="menu-item-desc">Zucchini, corn, roasted poblano, black beans, crema, cotija</div>
-          </div>
-          <div class="menu-item-price">$12</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">
-              Elote en Vaso
-              <span class="menu-tag menu-tag-veg">Veg</span>
-            </div>
-            <div class="menu-item-desc">Street corn, mayo, lime, chili powder, cotija cheese</div>
-          </div>
-          <div class="menu-item-price">$7</div>
-        </div>
-        <div class="menu-item">
-          <div>
-            <div class="menu-item-name">
-              Agua de Jamaica
-              <span class="menu-tag menu-tag-gf">GF</span>
-            </div>
-            <div class="menu-item-desc">Hibiscus flower, lime, cane sugar — house made daily</div>
-          </div>
-          <div class="menu-item-price">$4</div>
+        <div>
+          <div class="footer-heading">Connect</div>
+          <ul class="footer-links">
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">OpenTable</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
         </div>
       </div>
 
-      <div class="divider-ornament" style="margin: var(--space-10) 0">🌶️</div>
-
-      <div class="flex gap-3 flex-wrap">
-        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
-          <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip"></span><span class="spice-pip"></span></span> Mild
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
-          <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip"></span></span> Medium
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
-          <span class="spice"><span class="spice-pip hot"></span><span class="spice-pip hot"></span><span class="spice-pip hot"></span></span> Hot
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
-          <span class="menu-tag menu-tag-veg" style="margin:0">Veg</span> Vegetarian
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);font-size:13px;color:var(--color-text-muted)">
-          <span class="menu-tag menu-tag-gf" style="margin:0">GF</span> Gluten Free
-        </div>
+      <div class="footer-bottom">
+        <span>© 2025 Cinder &amp; Salt. All rights reserved.</span>
+        <span>Powered by <strong>Ember &amp; Stone Design System</strong></span>
       </div>
     </div>
-  </section>
+  </footer>
 
+  <!-- ===================================================================
+       Theme Switcher Script
+  =================================================================== -->
   <script>
-    const heroContent = {
-      bistro: {
-        eyebrow: 'Est. 2024 &nbsp;·&nbsp; Austin, Texas',
-        title:   'Where Every Meal Becomes <em>a Memory</em>',
-        sub:     'Fresh ingredients, honest cooking, and a table always waiting for you.',
+    const themes = {
+      noir: {
+        logo: "Cinder &amp; Salt",
+        eyebrow: "Est. 2019 · Austin, Texas",
+        title: "Fire-kissed.<br><em>Honestly sourced.</em>",
+        sub: "A steakhouse built on wood smoke and obsession. Every cut aged in-house, every sauce made from scratch, every night worth remembering.",
+        specialName: "45-Day Dry-Aged Bone-In Ribeye",
+        specialDesc: "Prime Black Angus, dry-aged in our in-house Himalayan salt cave. Finished over live oak coals with a bone marrow butter baste. Served with ember-roasted shallots and hand-cut frites.",
+        resTitle: "Make Your Reservation",
+        footerBrand: "Cinder &amp; Salt",
       },
-      fresh: {
-        eyebrow: 'Farm to Table &nbsp;·&nbsp; Austin, Texas',
-        title:   'Grown Here, <em>Cooked Here</em>',
-        sub:     'Seasonal menus built around what\'s ready, sourced from farms within 100 miles.',
+      mercado: {
+        logo: "La Llama Roja",
+        eyebrow: "Cocina Abierta · Austin, Texas",
+        title: "Fuego <em>de verdad.</em>",
+        sub: "An open kitchen rooted in the markets of Oaxaca. Hand-pressed tortillas, slow-braised meats, and salsas ground fresh every morning.",
+        specialName: "Birria de Res Tatemada",
+        specialDesc: "12-hour braised wagyu short rib, guajillo-ancho consommé, handmade corn tortillas, white onion, cilantro, and salsa macha. A dish worth crossing the city for.",
+        resTitle: "Haz Tu Reservación",
+        footerBrand: "La Llama Roja",
       },
-      cantina: {
-        eyebrow: '🌮 &nbsp; Austin, Texas &nbsp; 🌮',
-        title:   'Tacos, Tortas & <em>Todo Lo Demás</em>',
-        sub:     'Authentic street food, made from scratch. Rolling Tuesday through Sunday.',
-      },
+      botanica: {
+        logo: "The Glasshouse",
+        eyebrow: "Garden Kitchen · Austin, Texas",
+        title: "Grown here.<br><em>Cooked slowly.</em>",
+        sub: "A sun-drenched kitchen celebrating the seasons. Everything on the plate was growing within 60 miles of this table two days ago.",
+        specialName: "Heritage Hen en Cocotte",
+        specialDesc: "Pasture-raised hen from Yonder Way Farm, slow-roasted with garden herbs, lemon, and early spring vegetables. Finished at your table from a cast iron cocotte.",
+        resTitle: "Reserve Your Spot",
+        footerBrand: "The Glasshouse",
+      }
     };
 
     function setTheme(name, btn) {
       document.documentElement.dataset.theme = name;
+
+      // Update switcher buttons
       document.querySelectorAll('.theme-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const h = heroContent[name];
-      document.getElementById('hero-eyebrow').innerHTML = h.eyebrow;
-      document.getElementById('hero-title').innerHTML   = h.title;
-      document.getElementById('hero-sub').textContent   = h.sub;
-      document.getElementById('cantina-section').style.display =
-        name === 'cantina' ? 'block' : 'none';
+
+      // Update copy
+      const t = themes[name];
+      document.getElementById('nav-logo').innerHTML = t.logo;
+      document.getElementById('hero-eyebrow').textContent = t.eyebrow.replace(/&amp;/g, '&');
+      document.getElementById('hero-title').innerHTML = t.title;
+      document.getElementById('hero-sub').textContent = t.sub;
+      document.getElementById('special-name').textContent = t.specialName;
+      document.getElementById('special-desc').textContent = t.specialDesc;
+      document.getElementById('res-title').textContent = t.resTitle.replace(/&amp;/g, '&');
+      document.getElementById('footer-brand').innerHTML = t.footerBrand;
     }
   </script>
 

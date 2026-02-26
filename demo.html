@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wix-theme-base — Component Demo</title>
+  <link rel="stylesheet" href="styles/tokens.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/utilities.css">
+  <style>
+    body {
+      font-family: var(--font-sans);
+      color: var(--color-text);
+      background-color: var(--color-neutral-100);
+      margin: 0;
+      padding: var(--space-8) 0;
+    }
+    .demo-section {
+      background: var(--color-bg);
+      border-radius: var(--radius-lg);
+      padding: var(--space-8);
+      margin-bottom: var(--space-6);
+    }
+    .demo-label {
+      font-size: var(--font-size-xs);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: var(--letter-spacing-widest);
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+      padding-bottom: var(--space-2);
+      border-bottom: 1px solid var(--color-border);
+    }
+    .demo-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+    .swatch {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+    .swatch-label {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-top: var(--space-1);
+    }
+    .swatch-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="mb-8 animate-slide-up">
+    <h1 class="heading-1 mb-2">wix-theme-base</h1>
+    <p class="lead">Component demo — CSS design system for Wix Studio</p>
+  </div>
+
+  <!-- Colors -->
+  <div class="demo-section animate-fade-in">
+    <div class="demo-label">Colors</div>
+    <div class="demo-row">
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-primary)"></div><div class="swatch-label">primary</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-primary-dark)"></div><div class="swatch-label">primary-dark</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-primary-light)"></div><div class="swatch-label">primary-light</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-secondary)"></div><div class="swatch-label">secondary</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-accent)"></div><div class="swatch-label">accent</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-error)"></div><div class="swatch-label">error</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-success)"></div><div class="swatch-label">success</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-warning)"></div><div class="swatch-label">warning</div></div>
+    </div>
+    <div class="demo-row">
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-neutral-100)"></div><div class="swatch-label">100</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-neutral-200)"></div><div class="swatch-label">200</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-neutral-300)"></div><div class="swatch-label">300</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-neutral-400)"></div><div class="swatch-label">400</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-neutral-500)"></div><div class="swatch-label">500</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-neutral-700)"></div><div class="swatch-label">700</div></div>
+      <div class="swatch-group"><div class="swatch" style="background:var(--color-neutral-900)"></div><div class="swatch-label">900</div></div>
+    </div>
+  </div>
+
+  <!-- Typography -->
+  <div class="demo-section animate-fade-in delay-100">
+    <div class="demo-label">Typography</div>
+    <h1 class="heading-1 mb-2">Heading 1 — The quick brown fox</h1>
+    <h2 class="heading-2 mb-2">Heading 2 — The quick brown fox</h2>
+    <h3 class="heading-3 mb-2">Heading 3 — The quick brown fox</h3>
+    <h4 class="heading-4 mb-2">Heading 4 — The quick brown fox</h4>
+    <h5 class="heading-5 mb-2">Heading 5 — The quick brown fox</h5>
+    <h6 class="heading-6 mb-4">Heading 6 — The quick brown fox</h6>
+    <p class="lead mb-2">Lead text. Used for introductory paragraphs that need a little more presence than body copy.</p>
+    <p class="body-lg mb-2">Body large. Regular paragraph text at a slightly larger size for improved readability.</p>
+    <p class="body-base mb-2">Body base. Standard paragraph text. The workhorse of your content layout.</p>
+    <p class="body-sm mb-2">Body small. Useful for secondary information, captions, and fine print.</p>
+    <p class="caption mb-2">Caption text — small and muted, for image captions and labels.</p>
+    <p class="overline">Overline label</p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="demo-section animate-fade-in delay-100">
+    <div class="demo-label">Buttons</div>
+    <div class="demo-row">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-secondary">Secondary</button>
+      <button class="btn btn-outline">Outline</button>
+      <button class="btn btn-ghost">Ghost</button>
+      <button class="btn btn-primary" disabled>Disabled</button>
+    </div>
+    <div class="demo-row">
+      <button class="btn btn-primary btn-sm">Small</button>
+      <button class="btn btn-primary">Default</button>
+      <button class="btn btn-primary btn-lg">Large</button>
+    </div>
+  </div>
+
+  <!-- Badges -->
+  <div class="demo-section animate-fade-in delay-200">
+    <div class="demo-label">Badges</div>
+    <div class="demo-row">
+      <span class="badge badge-primary">Primary</span>
+      <span class="badge badge-secondary">Secondary</span>
+      <span class="badge badge-success">Active</span>
+      <span class="badge badge-warning">Pending</span>
+      <span class="badge badge-error">Error</span>
+      <span class="badge badge-outline">Outline</span>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="demo-section animate-fade-in delay-200">
+    <div class="demo-label">Cards</div>
+    <div class="grid-3">
+      <div class="card card-elevated">
+        <div class="card-header">Elevated Card</div>
+        <div class="card-body">
+          <p class="body-sm text-muted mb-4">Shadow gives it depth. Good for featured content or pricing blocks.</p>
+          <button class="btn btn-primary btn-sm">Action</button>
+        </div>
+        <div class="card-footer">
+          <span class="caption">Footer note</span>
+        </div>
+      </div>
+      <div class="card card-bordered">
+        <div class="card-header">Bordered Card</div>
+        <div class="card-body">
+          <p class="body-sm text-muted mb-4">Uses a border instead of a shadow. Cleaner on light backgrounds.</p>
+          <button class="btn btn-outline btn-sm">Action</button>
+        </div>
+        <div class="card-footer">
+          <span class="caption">Footer note</span>
+        </div>
+      </div>
+      <div class="card card-elevated">
+        <div class="card-body">
+          <span class="overline">Plan</span>
+          <h3 class="heading-4 mt-1 mb-1">Pro</h3>
+          <p class="heading-2 text-primary mb-1">$49<span class="body-sm text-muted">/mo</span></p>
+          <p class="body-sm text-muted mb-4">Everything you need to grow your business online.</p>
+          <button class="btn btn-primary w-full">Get started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="demo-section animate-fade-in delay-200">
+    <div class="demo-label">Navigation</div>
+    <nav class="flex items-center justify-between p-4 card card-bordered">
+      <span class="heading-5">Brand</span>
+      <ul class="nav">
+        <li class="nav-item"><a href="#" class="nav-link nav-link-active">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Services</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="btn btn-primary btn-sm">Book Now</button>
+    </nav>
+  </div>
+
+  <!-- Forms -->
+  <div class="demo-section animate-fade-in delay-300">
+    <div class="demo-label">Form Elements</div>
+    <div style="max-width: 480px;">
+      <div class="form-group mb-4">
+        <label class="label">Full name</label>
+        <input class="input" type="text" placeholder="John Smith">
+      </div>
+      <div class="form-group mb-4">
+        <label class="label">Email</label>
+        <input class="input input-error" type="email" placeholder="you@example.com" value="bad-email">
+        <span class="caption text-error mt-1">Enter a valid email address.</span>
+      </div>
+      <div class="form-group mb-4">
+        <label class="label">Message</label>
+        <textarea class="textarea" placeholder="How can we help?"></textarea>
+      </div>
+      <button class="btn btn-primary">Send Message</button>
+    </div>
+  </div>
+
+  <!-- Animations -->
+  <div class="demo-section">
+    <div class="demo-label">Animations — reload page to replay</div>
+    <div class="grid-4">
+      <div class="card card-bordered p-4 text-center animate-fade-in">
+        <span class="overline">fade-in</span>
+      </div>
+      <div class="card card-bordered p-4 text-center animate-slide-up delay-100">
+        <span class="overline">slide-up</span>
+      </div>
+      <div class="card card-bordered p-4 text-center animate-scale-in delay-200">
+        <span class="overline">scale-in</span>
+      </div>
+      <div class="card card-bordered p-4 text-center animate-bounce-in delay-300">
+        <span class="overline">bounce-in</span>
+      </div>
+    </div>
+    <div class="mt-4">
+      <div class="animate-shimmer rounded p-4 mb-2" style="height:20px; width:60%;"></div>
+      <div class="animate-shimmer rounded p-4 mb-2" style="height:20px; width:80%;"></div>
+      <div class="animate-shimmer rounded p-4" style="height:20px; width:40%;"></div>
+    </div>
+  </div>
+
+  <!-- Utilities -->
+  <div class="demo-section animate-fade-in delay-300">
+    <div class="demo-label">Utility Combos</div>
+    <div class="flex items-center justify-between p-4 bg-surface rounded-lg border mb-4">
+      <div class="flex items-center gap-3">
+        <div class="w-full rounded-full bg-primary flex items-center justify-center text-white font-bold" style="width:40px;height:40px;flex-shrink:0;">J</div>
+        <div>
+          <p class="font-semibold mb-0">John Smith</p>
+          <p class="caption">john@example.com</p>
+        </div>
+      </div>
+      <span class="badge badge-success">Active</span>
+    </div>
+    <div class="flex gap-3 flex-wrap">
+      <div class="card card-bordered px-4 py-3 flex items-center gap-2">
+        <span class="font-semibold text-primary">12</span>
+        <span class="body-sm text-muted">Projects</span>
+      </div>
+      <div class="card card-bordered px-4 py-3 flex items-center gap-2">
+        <span class="font-semibold text-success">98%</span>
+        <span class="body-sm text-muted">Uptime</span>
+      </div>
+      <div class="card card-bordered px-4 py-3 flex items-center gap-2">
+        <span class="font-semibold text-accent">4.9</span>
+        <span class="body-sm text-muted">Rating</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
