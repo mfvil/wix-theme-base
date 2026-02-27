@@ -1,67 +1,51 @@
 # El Mango Feliz Taqueria — Wix Studio Theme
 
-**Client:** El Mango Feliz Taqueria  
-**Live site:** https://elmango0499.wixsite.com/website  
-**Base theme:** `themes/restaurant-cantina.css`  
+**Client:** El Mango Feliz Taqueria
+**Live site:** https://elmango0499.wixsite.com/website
+**Base theme:** Ember & Stone / Mercado
 **Client override:** `clients/el-mango-feliz/theme-override.css`
 
 ---
 
 ## Design Direction
 
-Cantina palette (chili red, teal, warm cream) extended with a mango accent (#F5A623). Fonts swapped to **Lobster Two** (display/headings — hand-painted food truck signage energy) and **Nunito** (body — friendly, rounded, readable).
+Ember & Stone Mercado theme with El Mango Feliz brand overrides. Mango yellow (#FFC300) as primary accent on deep green (#0D3D35) base. Fonts: **Fraunces** (display) and **Plus Jakarta Sans** (body).
 
 | Token | Value | Use |
 |---|---|---|
-| `--color-primary` | `#C8261C` | Buttons, accents, links |
-| `--color-secondary` | `#0A7B73` | Location card borders, hours |
-| `--color-mango` | `#F5A623` | Tagline, featured badges, specials |
-| `--color-bg` | `#FFF6EC` | Page background |
-| `--font-display` | Lobster Two | All headings |
-| `--font-sans` | Nunito | Body text, UI |
+| `--emf-mango` | `#FFC300` | Buttons, badges, ornaments, price tags |
+| `--emf-green-dark` | `#0D3D35` | Primary buttons, headings, footer |
+| `--emf-green-mid` | `#1A4D3A` | Secondary surfaces, hover states |
+| `--color-secondary` | `#E03A1A` | Chili red — used sparingly as pop |
+| `--color-bg` | `#FFFDF5` | Page background (warm off-white) |
+| `--font-display` | Fraunces | All headings, hero text |
+| `--font-sans` | Plus Jakarta Sans | Body text, UI |
 
 ---
 
 ## How to Apply in Wix Studio
 
-### Step 1: Connect GitHub repo
-
-1. Open Wix Studio editor for `elmango0499.wixsite.com/website`
-2. Click the **hamburger menu** (top left) > **GitHub Integration**
-3. Connect to `mfvil/wix-theme-base` and select branch `feature/el-mango-feliz`
-4. Wix will sync the repo contents
-
-### Step 2: Add custom CSS
-
-1. In Wix Studio, go to **Site** > **Custom Code** (or the CSS panel)
-2. Add a `<link>` tag for Google Fonts (paste in the `<head>` section):
+### Step 1: Add Google Fonts (head section in Custom Code)
 
 ```html
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 ```
 
-3. Add another custom code block and link/paste the CSS files in order:
-   - `styles/tokens.css`
-   - `themes/restaurant-cantina.css`
-   - `clients/el-mango-feliz/theme-override.css`
+### Step 2: Add CSS in order
 
-> **Note:** Wix doesn't hot-reload CSS from GitHub. After pushing changes, you must **re-sync** in the GitHub Integration panel and **re-publish** the site for changes to go live.
+1. `styles/tokens.css`
+2. `themes/restaurant-cantina.css` (Mercado variant)
+3. `clients/el-mango-feliz/theme-override.css`
 
-### Step 3: Add Velo code
+> After pushing: re-sync GitHub Integration + re-publish site.
 
-1. In Wix Studio editor, enable **Dev Mode** (toggle in top bar)
-2. In the left panel, open **Public Files** and upload `velo/locations.js`
-3. Open **Page Code** > **Home** and paste the contents of `velo/page-home.js`
-4. Set element IDs in the editor to match what the code expects:
-   - Hero section ID: `heroSection`
-   - Location repeater ID: `locationRepeater`
-   - Inside each repeater item: `locationName`, `locationHours`, `locationDesc`, `locationBadge`
+### Step 3: Velo code
 
-### Step 4: Arrange the layout
-
-Once the code and CSS are in, the visual layout arrangement is done in the **Wix editor** by dragging and positioning elements. The CSS classes will apply automatically when the right class names are set on each element.
+1. Enable Dev Mode
+2. Upload `velo/locations.js` to Public Files
+3. Paste `velo/page-home.js` into Page Code > Home
 
 ---
 
@@ -69,16 +53,12 @@ Once the code and CSS are in, the visual layout arrangement is done in the **Wix
 
 | Class | Use |
 |---|---|
-| `.hero-tagline` | "Where Every Taco Tells a Story" italic mango text |
-| `.hero-headline` | Main page title, Lobster Two, large |
-| `.cta-button` | Red rounded call-to-action button |
-| `.cta-button--secondary` | Teal variant |
-| `.cta-button--mango` | Mango/gold variant |
-| `.location-card` | Location box with teal left border |
-| `.location-name` | Location heading inside card |
-| `.location-hours` | Hours badge inside card |
-| `.badge-mango` | Golden badge for specials/featured |
-| `.section-label` | Uppercase overline labels |
+| `.menu-section-title` | Section headers (Fraunces, mango) |
+| `.menu-item-price` | Price display (green-dark, mono) |
+| `.badge-featured` | Specials badge (mango) |
+| `.badge-spicy` | Spice indicator (chili red) |
+| `.location-card` | Location info box |
+| `.social-icon-link img` | Social icons (22px constrained) |
 
 ---
 
@@ -86,9 +66,9 @@ Once the code and CSS are in, the visual layout arrangement is done in the **Wix
 
 ```
 clients/el-mango-feliz/
-  theme-override.css       Client-specific CSS overrides
+  theme-override.css       Mercado theme + EMF brand overrides
   velo/
-    locations.js           Location data module (import in page code)
+    locations.js           Location data module
     page-home.js           Homepage Velo page code
   README.md                This file
 ```
